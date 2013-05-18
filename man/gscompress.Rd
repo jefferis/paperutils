@@ -6,10 +6,12 @@
     pdflevel = "1.5", Force = TRUE)
 }
 \arguments{
-  \item{pdfin,}{pdfout Input and Output pdfs}
+  \item{pdfin,pdfout}{Input and Output pdfs}
 
-  \item{firstpage,}{lastpage Page range (when omitted,
-  first and last page used)}
+  \item{firstpage}{Start page (when omitted = 1)}
+
+  \item{lastpage}{Last page (when omitted = last page in
+  pdf)}
 
   \item{pdflevel}{Minium compatible pdf version of output
   file}

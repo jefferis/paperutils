@@ -3,8 +3,8 @@
 #' When pdfout is missing it defaults to <input>_gso.pdf
 #' 
 #' This seems to work well for pdflatex output
-#' @param pdfin, pdfout Input and Output pdfs
-#' @param firstpage, lastpage Page range (when omitted, first and last page used) 
+#' @param pdfin,pdfout Input and Output pdfs
+#' @param firstpage,lastpage Page range (defaults to start = 1, lastpage = last in pdf) 
 #' @param pdflevel Minium compatible pdf version of output file
 #' @param Force When FALSE, only update file for newer input
 #' @return character vector with path to pdfout

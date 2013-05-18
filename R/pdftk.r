@@ -6,3 +6,15 @@ pdftk<-function(){
   }
   path
 }
+
+#' Return number of pages in pdf
+#' 
+#' @param pdf Path to input pdf file
+#' @return number of pages
+#' @author jefferis
+#' @export
+numpages<-function(pdf){
+  t=system(paste(pdftk(),shQuote(pdf),"dump_data output -"),intern=TRUE)
+  tt=grep('NumberOfPages',t,value=TRUE)
+  return(as.integer(sub("NumberOfPages:[ ]*(\\d+)","\\1",tt,perl=TRUE)))
+}
