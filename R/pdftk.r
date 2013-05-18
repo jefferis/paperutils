@@ -2,8 +2,11 @@
 pdftk<-function(){
   path=getOption('pdftk',system('which pdftk',intern=TRUE))
   if(length(path)==0){
-    stop("Cannot locate pdftk. Make sure that it is in your path or set options(pdftk='/path/to/pdftk')")
+    # pdftk is usually here on a mac
+    if(!file.exists(path<-"/opt/pdflabs/pdftk/bin/pdftk"))
+      stop("Cannot locate pdftk. Make sure that it is in your path or set options(pdftk='/path/to/pdftk')")
   }
+  if(is.null(getOption('pdftk'))) options(pdftk=path)
   path
 }
 
