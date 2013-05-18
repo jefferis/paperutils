@@ -33,6 +33,9 @@ find_supplemental<-function(auxfile,numpages,lastRegularPage){
     t=readLines(auxfile)
     tt=t[grep(paste("{Supplementa(l|ry) Information}",sep=""),t,perl=TRUE,ignore.case=TRUE)]
     supplementalStart=as.integer(sub(".*{section}.*}{(\\d+)}{.*","\\1",tt,perl=TRUE))
+    if(length(supplementalStart)==0) stop("Unable to locate SI")
+    else if(length(supplementalStart)>1)
+      supplementalStart=supplementalStart[length(supplementalStart)]
   } else {
     supplementalStart=lastRegularPage+1
   }
