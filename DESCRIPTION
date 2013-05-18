@@ -1,12 +1,19 @@
 Package: pdfutils
-Maintainer: Who to complain to <yourfault@somewhere.net>
-Author: jefferis
-Version: 1.0
+Maintainer: Gregory Jefferis <jefferis@gmail.com>
+Author: Gregory Jefferis
+Version: 0.1
 License: GPL-3
-Title: 
-Description: 
+Title: PDF manipulation utilities (wrapping pdftk and ghostscript)
+Description: Utility functions to extract and combine pages from PDF files that
+    we use when turning a single pdflatex output file into the individual pages
+    that many journals still want. Can also do a decent job of compressing
+    pdflatex output using ghostscript. Finally has options to read and write
+    bookmarks.
+Depends:
+    nat.utils
 Suggests:
     testthat,
-    roxygen2
+    roxygen2,
+SystemRequirements: pdftk (http://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/)
 Collate:
     'pdfutils-package.r'
