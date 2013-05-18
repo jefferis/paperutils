@@ -8,7 +8,7 @@
 #' @author jefferis
 #' @export
 find_figs<-function(auxfile,ftype=c("fig","table")){
-  ftype=match.arg(tolower(ftype))
+  ftype=match.arg(ftype)
   auxentry=ifelse(ftype=="Fig","lof","lot")
   t=readLines(auxfile)
   tt=t[grep(paste("{",auxentry,"}",sep=""),t,perl=TRUE)]
