@@ -1,0 +1,31 @@
+\name{make_bookmark_text}
+\alias{make_bookmark_text}
+\title{Make a correctly formatted block of text defining a bookmark in pdftk format}
+\usage{
+  make_bookmark_text(title, level, page)
+}
+\arguments{
+  \item{title}{The title of the bookmark}
+
+  \item{level}{The level of the bookmark (1 is the
+  highest)}
+
+  \item{page}{Absolute page that this refers to}
+}
+\value{
+  String that can be written to bookmarks file
+}
+\description{
+  Make a correctly formatted block of text defining a
+  bookmark in pdftk format
+}
+\examples{
+make_bookmark_text('Figure 1',3,20)
+}
+\author{
+  jefferis
+}
+\seealso{
+  \code{\link{extract_bookmarks}}
+}
+

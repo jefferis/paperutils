@@ -1,2 +1,6 @@
+export(find_figs)
+export(find_supplemental)
 export(gscompress)
+export(insert_bookmarks)
+export(make_bookmark_text)
 export(numpages)

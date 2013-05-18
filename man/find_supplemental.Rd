@@ -1,0 +1,27 @@
+\name{find_supplemental}
+\alias{find_supplemental}
+\title{Find location of supplemental information (SI) using latex auxfile}
+\usage{
+  find_supplemental(auxfile, numpages, lastRegularPage)
+}
+\arguments{
+  \item{auxfile}{Path to aux file produced by latex (inc
+  LyX)}
+
+  \item{numpages}{Number of pages in pdf (assuming this is
+  where SI stops)}
+
+  \item{lastRegularPage}{Last page before SI}
+}
+\value{
+  Integer page number sequence for SI
+}
+\description{
+  This can be confused by entries in table of contents etc,
+  in which case the explicit parameter lastRegularPage can
+  be passed.
+}
+\author{
+  jefferis
+}
+

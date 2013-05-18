@@ -19,3 +19,5 @@ Collate:
     'pdfutils-package.r'
     'gs.r'
     'pdftk.r'
+    'pdfbookmarks.r'
+    'pdflatexutils.r'

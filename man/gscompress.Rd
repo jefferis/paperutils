@@ -8,10 +8,8 @@
 \arguments{
   \item{pdfin,pdfout}{Input and Output pdfs}
 
-  \item{firstpage}{Start page (when omitted = 1)}
-
-  \item{lastpage}{Last page (when omitted = last page in
-  pdf)}
+  \item{firstpage,lastpage}{Page range (defaults to start =
+  1, lastpage = last in pdf)}
 
   \item{pdflevel}{Minium compatible pdf version of output
   file}
