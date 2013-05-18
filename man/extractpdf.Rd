@@ -1,0 +1,43 @@
+\name{extractpdf}
+\alias{extractpdf}
+\title{Extract pages from a pdf to new pdf(s)}
+\usage{
+  extractpdf(pdfin, pages, outfile, prefix = NULL,
+    DryRun = F, gscomp = FALSE, bookmarks = NULL)
+}
+\arguments{
+  \item{pdfin}{Path to input pdf}
+
+  \item{pages}{Integer vector. If named, the names specify
+  output files}
+
+  \item{outfile}{}
+
+  \item{prefix}{a prefix to add to the start of all output
+  pdf file names}
+
+  \item{DryRun}{Just say what would happen (when TRUE)}
+
+  \item{gscomp}{Compress with ghostscript}
+
+  \item{bookmarks}{Bookmarks info file (pdftk format) that
+  can be used to add bookmarks to the output pdf.}
+}
+\description{
+  Extract pages from a pdf to new pdf(s)
+}
+\examples{
+\dontrun{
+aux='/path/to/myfile.aux'
+pdffile='/path/to/myfile.pdf'
+figurepages=findfigs(aux)
+extractpdf(pdffile,figurepages,prefix='LastAuthor_',gscomp=TRUE)
+}
+}
+\author{
+  jefferis
+}
+\seealso{
+  \code{\link{gscompress}}
+}
+
