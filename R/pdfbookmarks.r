@@ -1,6 +1,6 @@
 #' @rdname insert_bookmarks
 #' @return location of pdftk bookmark file
-#' export
+#' @export
 extract_bookmarks<-function(pdfin,bookmarks){
   if(missing(bookmarks)) bookmarks=sub("\\.pdf$",".info",basename(pdfin))
   cmd=sprintf("%s %s  dump_data > %s",pdftk(),shQuote(pdfin),shQuote(bookmarks))

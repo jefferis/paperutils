@@ -13,7 +13,7 @@
   \item{bookmarks}{Path to a bookmarks file in pdf format}
 }
 \value{
-  location of pdftk bookmark file export
+  location of pdftk bookmark file
   location of modified pdf
 }
 \description{

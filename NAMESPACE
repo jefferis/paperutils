@@ -1,3 +1,4 @@
+export(extract_bookmarks)
 export(extractpdf)
 export(find_figs)
 export(find_supplemental)
