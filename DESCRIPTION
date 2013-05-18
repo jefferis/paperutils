@@ -17,3 +17,5 @@ Suggests:
 SystemRequirements: pdftk (http://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/)
 Collate:
     'pdfutils-package.r'
+    'gs.r'
+    'pdftk.r'
