@@ -2,16 +2,14 @@
 \alias{extractpdf}
 \title{Extract pages from a pdf to new pdf(s)}
 \usage{
-  extractpdf(pdfin, pages, outfile, prefix = NULL,
+  extractpdf(pdfin, pages, pdfout, prefix = NULL,
     DryRun = F, gscomp = FALSE, bookmarks = NULL)
 }
 \arguments{
-  \item{pdfin}{Path to input pdf}
+  \item{pdfin,pdfout}{Path to input and output pdf}
 
   \item{pages}{Integer vector. If named, the names specify
   output files}
-
-  \item{outfile}{}
 
   \item{prefix}{a prefix to add to the start of all output
   pdf file names}

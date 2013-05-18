@@ -21,9 +21,8 @@ numpages<-function(pdf){
 
 #' Extract pages from a pdf to new pdf(s)
 #' 
-#' @param pdfin Path to input pdf
+#' @param pdfin,pdfout Path to input and output pdf
 #' @param pages Integer vector. If named, the names specify output files
-#' @param outfile 
 #' @param prefix a prefix to add to the start of all output pdf file names
 #' @param DryRun Just say what would happen (when TRUE)
 #' @param gscomp Compress with ghostscript
@@ -39,34 +38,34 @@ numpages<-function(pdf){
 #' figurepages=findfigs(aux)
 #' extractpdf(pdffile,figurepages,prefix='LastAuthor_',gscomp=TRUE)
 #' }
-extractpdf<-function(pdfin,pages,outfile,prefix=NULL,DryRun=F,gscomp=FALSE,bookmarks=NULL){
+extractpdf<-function(pdfin,pages,pdfout,prefix=NULL,DryRun=F,gscomp=FALSE,bookmarks=NULL){
   if(length(pages)==0) return(NULL)
-  if(missing(outfile)) {
+  if(missing(pdfout)) {
     # outfiles should be names of pages vector
     if(length(names(pages))!=length(pages)) stop("specify outfile explicitly or as names of pages vector")
-    outfile=names(pages)
-    if(!is.null(prefix)) outfile=paste(prefix,outfile,sep="")
+    pdfout=names(pages)
+    if(!is.null(prefix)) pdfout=paste(prefix,pdfout,sep="")
   }
-  if(length(outfile)>1){
-    if(length(outfile)!=length(pages)) stop("must supply one outfile for each page")
-    names(pages)=outfile
-    for(n in outfile){
+  if(length(pdfout)>1){
+    if(length(pdfout)!=length(pages)) stop("must supply one outfile for each page")
+    names(pages)=pdfout
+    for(n in pdfout){
       extractpdf(pdfin,pages[n],n,DryRun=DryRun,gscomp=gscomp)
     }
-    return(length(outfile))
+    return(length(pdfout))
   }
-  cmd=paste(pdftk(),shQuote(pdfin),"cat",paste(pages,collapse=" "),"output",shQuote(outfile))
+  cmd=paste(pdftk(),shQuote(pdfin),"cat",paste(pages,collapse=" "),"output",shQuote(pdfout))
   if(DryRun) {
     cat(cmd,"\n")
   }
   else {
-    rval=RunCmdForNewerInput(cmd,pdfin,outfile)
+    rval=RunCmdForNewerInput(cmd,pdfin,pdfout)
     if(rval){
       if(!is.null(bookmarks)){
         # add back bookmarks
-        insert_bookmarks(outfile,bookmarks,outfile)
+        insert_bookmarks(pdfout,bookmarks,pdfout)
       }
-      if(gscomp) gscompress(outfile,outfile)
+      if(gscomp) gscompress(pdfout,pdfout)
     }
   }
 }

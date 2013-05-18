@@ -4,7 +4,7 @@
 #' 
 #' This seems to work well for pdflatex output
 #' @param pdfin,pdfout Input and Output pdfs
-#' @param firstpage,lastpage Page range (defaults to start = 1, lastpage = last in pdf) 
+#' @param firstpage,lastpage Page range (defaults to firstpage = 1, lastpage = last in pdf)
 #' @param pdflevel Minium compatible pdf version of output file
 #' @param Force When FALSE, only update file for newer input
 #' @return character vector with path to pdfout
