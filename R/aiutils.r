@@ -11,10 +11,10 @@
 #' @seealso ailinkedfiles
 #' @family linked_from
 #' @examples
-#' lfs=linked_from_ai(system.file('lyx','composite_fig.pdf',package='pdfutils'))
+#' lfs=linked_from_ai(system.file('lyx','composite_fig.pdf',package='paperutils'))
 #' stopifnot(length(lfs)==2)
 linked_from_ai<-function(x,AbsolutePaths=TRUE,mustWork=NA){
-  ail=system.file('exec','ailinkedfiles.pl',package='pdfutils',mustWork = TRUE)
+  ail=system.file('exec','ailinkedfiles.pl',package='paperutils',mustWork = TRUE)
   cmd=paste(ail,shQuote(x))
   rval=system(cmd,intern=TRUE)
   # now get rid of comments

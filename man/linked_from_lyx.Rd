@@ -20,7 +20,7 @@
 }
 \examples{
 \dontrun{linked_from_lyx('/GD/LMBD/Papers/2012fruLHNs/lyx/main.lyx')}
-linked_from_lyx(system.file('lyx','test.lyx',package='pdfutils'))
+linked_from_lyx(system.file('lyx','test.lyx',package='paperutils'))
 }
 \author{
   jefferis

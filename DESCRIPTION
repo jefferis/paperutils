@@ -1,4 +1,4 @@
-Package: pdfutils
+Package: paperutils
 Maintainer: Gregory Jefferis <jefferis@gmail.com>
 Author: Gregory Jefferis
 Version: 0.1
@@ -18,7 +18,7 @@ Suggests:
     roxygen2,
 SystemRequirements: pdftk, ghostscript, perl
 Collate:
-    'pdfutils-package.r'
+    'paperutils-package.r'
     'gs.r'
     'pdftk.r'
     'pdfbookmarks.r'

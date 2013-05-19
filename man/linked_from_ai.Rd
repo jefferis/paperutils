@@ -20,7 +20,7 @@
   pdf)
 }
 \examples{
-lfs=linked_from_ai(system.file('lyx','composite_fig.pdf',package='pdfutils'))
+lfs=linked_from_ai(system.file('lyx','composite_fig.pdf',package='paperutils'))
 stopifnot(length(lfs)==2)
 }
 \author{

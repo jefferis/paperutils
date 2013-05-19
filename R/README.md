@@ -1,4 +1,4 @@
-# pdfutils
+# paperutils
 
 R package with utility functions to support preparation of journal articles
 
@@ -19,10 +19,10 @@ to prepare our journal articles for submission. This package contains functions 
   * perl
 
 ### Released versions
-    install.packages("pdfutils",repos='http://jefferislab.org/R',type='source')
+    install.packages("paperutils",repos='http://jefferislab.org/R',type='source')
 ### Bleeding Edge
 Straight from github with Hadley Wickham's [devtools](https://github.com/hadley/devtools) package:
 
     install.packages("devtools")
     library(devtools)
-    install_github('pdfutils','jefferis')
+    install_github('paperutils','jefferis')
