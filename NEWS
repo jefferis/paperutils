@@ -1,3 +1,7 @@
+paperutils 0.1-1
+================
+* fix bug in find_figs (and add test to avoid repeat)
+
 paperutils 0.1
 ==============
 * First version on github
