@@ -2,7 +2,7 @@
 \alias{find_figs}
 \title{Find location of figures or tables using latex auxfile}
 \usage{
-  find_figs(auxfile, ftype = c("fig", "table"))
+  find_figs(auxfile, ftype = c("Fig", "Table"))
 }
 \arguments{
   \item{auxfile}{Path to aux file produced by latex (inc
