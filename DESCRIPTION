@@ -21,3 +21,5 @@ Collate:
     'pdftk.r'
     'pdfbookmarks.r'
     'pdflatexutils.r'
+    'aiutils.r'
+    'lyxutils.r'

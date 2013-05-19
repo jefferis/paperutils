@@ -1,0 +1,34 @@
+\name{linked_from_ai}
+\alias{linked_from_ai}
+\title{List all linked files from given illustrator file (ai or pdf)}
+\usage{
+  linked_from_ai(x, AbsolutePaths = TRUE, mustWork = NA)
+}
+\arguments{
+  \item{x}{Path to Illustrator file (ai,pdf)}
+
+  \item{AbsolutePaths}{Return abolute path to linked files}
+
+  \item{mustWork}{If true, check that linked files actually
+  exist}
+}
+\value{
+  Character vector of paths to linked files
+}
+\description{
+  List all linked files from given illustrator file (ai or
+  pdf)
+}
+\examples{
+lfs=linked_from_ai(system.file('lyx','composite_fig.pdf',package='pdfutils'))
+stopifnot(length(lfs)==2)
+}
+\author{
+  jefferis
+}
+\seealso{
+  ailinkedfiles
+
+  Other linked_from: \code{\link{ailinkedfiles}}
+}
+
