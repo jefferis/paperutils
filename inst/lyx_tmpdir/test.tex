@@ -1,0 +1,223 @@
+\batchmode
+\makeatletter
+\def\input@path{{/GD/dev/R/pdfutils/inst/lyx//}}
+\makeatother
+\documentclass[11pt,british,super,sort&compress]{article}
+\usepackage{mathptmx}
+\usepackage{helvet}
+\usepackage{courier}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\setcounter{tocdepth}{2}
+\synctex=-1
+\usepackage{color}
+\usepackage{babel}
+\usepackage{array}
+\usepackage{refstyle}
+\usepackage{float}
+\usepackage{url}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,
+ breaklinks=true,pdfborder={0 0 0},backref=false,colorlinks=true]
+ {hyperref}
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+
+\AtBeginDocument{\providecommand\figref[1]{\ref{fig:#1}}}
+\AtBeginDocument{\providecommand\tabref[1]{\ref{tab:#1}}}
+%% Because html converters don't know tabularnewline
+\providecommand{\tabularnewline}{\\}
+\RS@ifundefined{subref}
+  {\def\RSsubtxt{section~}\newref{sub}{name = \RSsubtxt}}
+  {}
+\RS@ifundefined{thmref}
+  {\def\RSthmtxt{theorem~}\newref{thm}{name = \RSthmtxt}}
+  {}
+\RS@ifundefined{lemref}
+  {\def\RSlemtxt{lemma~}\newref{lem}{name = \RSlemtxt}}
+  {}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+\newcommand{\lyxaddress}[1]{
+\par {\raggedright #1
+\vspace{1.4em}
+\noindent\par}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+\usepackage[small]{caption}
+%\usepackage{nonfloat}
+\usepackage{pdflscape}
+\setcounter{secnumdepth}{-1}
+\newref{fig}{refcmd = {\hyperref[#1]{Fig.~\ref{#1}}}}
+\newref{tab}{refcmd = {\hyperref[#1]{Table~\ref{#1}}}}
+\usepackage{geometry}
+\usepackage{pdfsync}
+%\newrefformat{fig}{\hyperref[#1]{Fig.~\ref*{#1}}}
+
+\makeatother
+
+\begin{document}
+
+\title{Some Title}
+
+
+\author{Some Authors\textsuperscript{1}, Some Cheese\textsuperscript{1}}
+
+\maketitle
+
+\lyxaddress{\textsuperscript{1}Somewhere or other}
+\begin{abstract}
+A short summary
+
+\newpage{}
+\end{abstract}
+
+\section{Introduction}
+
+Some introductory thoughts
+
+
+\section{Results}
+
+
+\subsection{Results section 1}
+
+Let's refer to \figref{wt}.
+
+
+\subsection{Results section 2}
+
+And here we'll refer to \tabref{S_cellcounts}.
+
+
+\section{Discussion}
+
+
+\section{Methods}
+
+
+\subsection{Fly stocks}
+
+
+\subsection{Analysis}
+
+
+\section{Supplementary Information}
+
+Supplementary Information is available for download at \url{http://somelab.org}.
+
+
+\section{Acknowledgements}
+
+
+\section{Author information}
+
+The authors declare no competing financial interests. Correspondence
+and requests for materials should be addressed to ABC (abc@xyz.edu).\newpage{}\newgeometry{text={183mm,247mm},centering}\pagestyle{empty}
+
+
+\section{Figures}
+
+
+
+\begin{figure*}[h]
+\begin{centering}
+\includegraphics{0_GD_dev_R_pdfutils_inst_lyx_fig1.pdf}\caption{\label{fig:wt}\textbf{S}ome Figure}
+
+\par\end{centering}
+
+\textbf{\footnotesize a--b, }{\footnotesize some panels}
+\end{figure*}
+
+
+\newpage{}
+\begin{figure*}[h]
+\begin{centering}
+\includegraphics{23_GD_dev_R_pdfutils_inst_lyx_fig2.pdf}\caption{\label{fig:Or67d}Another figure}
+
+\par\end{centering}
+
+\textbf{\footnotesize a--b,}{\footnotesize{} more panels}
+\end{figure*}
+
+
+\newpage{}
+
+\appendix
+\pagestyle{plain}\setcounter{page}{1}%\newgeometry{}\setcounter{figure}{0}\renewcommand{\thefigure}{S\arabic{figure}}\setcounter{table}{0}\renewcommand{\thetable}{S\arabic{table}}
+
+
+\section{Supplementary Information}
+
+
+\subsection{Supplementary Figures}
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[height=1\textheight]{24_GD_dev_R_pdfutils_inst_lyx_composite_fig.pdf}
+\par\end{centering}
+
+\begin{centering}
+\caption{\label{fig:S_wtCartoons}Composite Figure}
+
+\par\end{centering}
+
+{\footnotesize Circuit models }
+\end{figure}
+
+
+\clearpage{}
+
+
+\subsection{Supplementary Tables}
+
+\begin{table}[h]
+\begin{centering}
+\caption{\textbf{\label{tab:S_cellcounts}}Some Table}
+
+\par\end{centering}
+
+\vspace{0.5cm}
+
+
+\begin{centering}
+\begin{tabular}{|c|c|c|c|}
+\cline{3-4} 
+\multicolumn{2}{c|}{} &
+\textbf{Col 1} &
+\textbf{Col 2}\tabularnewline
+\hline 
+\multirow{3}{*}{\textbf{\emph{Heading}}} &
+Row 1 &
+18.2 (1.7) &
+11.2 (1.0)\tabularnewline
+\cline{2-4} 
+ & Row 2 &
+12.8 (1.6) &
+11.3 (0.9)\tabularnewline
+\cline{2-4} 
+ & Row 3 &
+18.8 (1.5) &
+11.7 (1.2)\tabularnewline
+\hline 
+\end{tabular}
+\par\end{centering}
+
+\vspace{0.5cm}
+
+
+{\footnotesize Cell counts (mean (s.d.))}
+\end{table}
+\clearpage{}
+
+
+\subsection{Supplementary Discussion}
+
+Some more discussion.
+\end{document}
