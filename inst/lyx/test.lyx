@@ -387,19 +387,6 @@ status open
 
 \begin_layout Plain Layout
 
-%
-\backslash
-newgeometry{}
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
 
 \backslash
 setcounter{figure}{0}
@@ -454,7 +441,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename composite_fig.pdf
-	height 100theight%
+	height 75theight%
 
 \end_inset
 
