@@ -35,9 +35,11 @@ linked_from_lyx<-function(x,AbsolutePaths=TRUE,mustWork=NA){
 #' @family lyx
 #' @examples
 #' \dontrun{
-#' ## current lyx directory
+#' # current lyx pdf
 #' current_lyx_tempfile()
-#' ## make sure the file is main.lyx
+#' # current lyx directory
+#' current_lyx_tempfile('pdf')
+#' # make sure the file is main.lyx
 #' current_lyx_tempfile(lyxfile='main.lyx')
 #' }
 current_lyx_tempfile<-function(ftype=c('pdf','aux','dir','tex','lof'),lyxfile=NULL,tmproot=NULL){
