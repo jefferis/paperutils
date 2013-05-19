@@ -1,0 +1,6 @@
+paperutils 0.1
+==============
+* First version on github
+* translates main functions from
+  * JonnyEphysLocal/R/figureFunctions.R
+  * 2012fruLHNs/lyx/pdf_functions.R
