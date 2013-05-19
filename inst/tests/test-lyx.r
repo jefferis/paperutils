@@ -27,7 +27,7 @@ test_that("Find files linked from LyX file", {
   expect_equal(linked_figs, baseline,
               info='Correct relative path to linked files')
   
-  path_to_lyxdir=system.file('lyx',package='pdfutils')
+  path_to_lyxdir=system.file('lyx',package='paperutils')
   linked_figs_abs=linked_from_lyx(lyxfile,AbsolutePaths=TRUE)
   baseline_abs=file.path(path_to_lyxdir,baseline)
   expect_equal(linked_figs_abs, baseline_abs,

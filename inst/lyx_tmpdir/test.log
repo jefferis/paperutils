@@ -635,10 +635,10 @@ File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<0_GD_dev_R_pdfutils_inst_lyx_fig1.pdf, id=87, 289.08pt x 289.08pt>
-File: 0_GD_dev_R_pdfutils_inst_lyx_fig1.pdf Graphic file (type pdf)
-<use 0_GD_dev_R_pdfutils_inst_lyx_fig1.pdf>
-Package pdftex.def Info: 0_GD_dev_R_pdfutils_inst_lyx_fig1.pdf used on input li
+<0_GD_dev_R_paperutils_inst_lyx_fig1.pdf, id=87, 289.08pt x 289.08pt>
+File: 0_GD_dev_R_paperutils_inst_lyx_fig1.pdf Graphic file (type pdf)
+<use 0_GD_dev_R_paperutils_inst_lyx_fig1.pdf>
+Package pdftex.def Info: 0_GD_dev_R_paperutils_inst_lyx_fig1.pdf used on input li
 ne 131.
 (pdftex.def)             Requested size: 289.07928pt x 289.07928pt.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10.95> not available
@@ -647,19 +647,19 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <9> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 135.
 [3
 
- <./0_GD_dev_R_pdfutils_inst_lyx_fig1.pdf>] <23_GD_dev_R_pdfutils_inst_lyx_fig2
+ <./0_GD_dev_R_paperutils_inst_lyx_fig1.pdf>] <23_GD_dev_R_paperutils_inst_lyx_fig2
 .pdf, id=98, 289.08pt x 289.08pt>
-File: 23_GD_dev_R_pdfutils_inst_lyx_fig2.pdf Graphic file (type pdf)
-<use 23_GD_dev_R_pdfutils_inst_lyx_fig2.pdf>
-Package pdftex.def Info: 23_GD_dev_R_pdfutils_inst_lyx_fig2.pdf used on input l
+File: 23_GD_dev_R_paperutils_inst_lyx_fig2.pdf Graphic file (type pdf)
+<use 23_GD_dev_R_paperutils_inst_lyx_fig2.pdf>
+Package pdftex.def Info: 23_GD_dev_R_paperutils_inst_lyx_fig2.pdf used on input l
 ine 142.
 (pdftex.def)             Requested size: 289.07928pt x 289.07928pt.
-[4 <./23_GD_dev_R_pdfutils_inst_lyx_fig2.pdf>]
-<24_GD_dev_R_pdfutils_inst_lyx_composite_fig.pdf, id=110, 597.51233pt x 845.047
+[4 <./23_GD_dev_R_paperutils_inst_lyx_fig2.pdf>]
+<24_GD_dev_R_paperutils_inst_lyx_composite_fig.pdf, id=110, 597.51233pt x 845.047
 1pt>
-File: 24_GD_dev_R_pdfutils_inst_lyx_composite_fig.pdf Graphic file (type pdf)
-<use 24_GD_dev_R_pdfutils_inst_lyx_composite_fig.pdf>
-Package pdftex.def Info: 24_GD_dev_R_pdfutils_inst_lyx_composite_fig.pdf used o
+File: 24_GD_dev_R_paperutils_inst_lyx_composite_fig.pdf Graphic file (type pdf)
+<use 24_GD_dev_R_paperutils_inst_lyx_composite_fig.pdf>
+Package pdftex.def Info: 24_GD_dev_R_paperutils_inst_lyx_composite_fig.pdf used o
 n input line 163.
 (pdftex.def)             Requested size: 496.94713pt x 702.78307pt.
 
@@ -670,7 +670,7 @@ been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.173 
-       [1 <./24_GD_dev_R_pdfutils_inst_lyx_composite_fig.pdf>]
+       [1 <./24_GD_dev_R_paperutils_inst_lyx_composite_fig.pdf>]
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <10.95> not available
 (Font)              Font shape `T1/ptm/b/it' tried instead on input line 196.
 pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
