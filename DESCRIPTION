@@ -11,6 +11,7 @@ Description: Utility functions to work with LyX text files, Illustrator figures
     individual pages that many journals still want. Can also do a decent job of
     compressing pdflatex output using ghostscript. Finally has options to read
     and write bookmarks.
+URL: https://github.com/jefferis/paperutils
 Depends:
     nat.utils
 Suggests:
