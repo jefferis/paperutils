@@ -1,3 +1,8 @@
+paperutils 0.1-2
+================
+* extractpdf can now accept (named) lists of page ranges to extract to multiple
+  files.
+
 paperutils 0.1-1
 ================
 * fix bug in find_figs (and add test to avoid repeat)

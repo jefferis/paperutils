@@ -1,8 +1,8 @@
 Package: paperutils
 Maintainer: Gregory Jefferis <jefferis@gmail.com>
 Author: Gregory Jefferis
-Version: 0.1-1
-Date: 2013-05-19
+Version: 0.1-2
+Date: 2013-08-16
 License: GPL-3
 Title: Support preparation of journal articles from LyX/pdflatex output
 Description: Utility functions to work with LyX text files, Illustrator figures
