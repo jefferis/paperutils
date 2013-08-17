@@ -8,8 +8,8 @@
 \arguments{
   \item{pdfin,pdfout}{Path to input and output pdf}
 
-  \item{pages}{Integer vector. If named, the names specify
-  output files}
+  \item{pages}{Integer vector or list. If named, the names
+  specify output files}
 
   \item{prefix}{a prefix to add to the start of all output
   pdf file names}
