@@ -25,7 +25,7 @@ numpages<-function(pdf){
 #' Extract pages from a pdf to new pdf(s)
 #' 
 #' @param pdfin,pdfout Path to input and output pdf
-#' @param pages Integer vector. If named, the names specify output files
+#' @param pages Integer vector or list. If named, the names specify output files
 #' @param prefix a prefix to add to the start of all output pdf file names
 #' @param DryRun Just say what would happen (when TRUE)
 #' @param gscomp Compress with ghostscript
@@ -53,7 +53,7 @@ extractpdf<-function(pdfin,pages,pdfout,prefix=NULL,DryRun=F,gscomp=FALSE,bookma
     if(length(pdfout)!=length(pages)) stop("must supply one outfile for each page")
     names(pages)=pdfout
     for(n in pdfout){
-      extractpdf(pdfin,pages[n],n,DryRun=DryRun,gscomp=gscomp)
+      extractpdf(pdfin,unlist(pages[n]),n,DryRun=DryRun,gscomp=gscomp)
     }
     return(length(pdfout))
   }
