@@ -6,11 +6,16 @@
 #' @param pdfin,pdfout Input and Output pdfs
 #' @param firstpage,lastpage Page range (defaults to firstpage = 1, lastpage = last in pdf)
 #' @param pdflevel Minium compatible pdf version of output file
+#' @param gsopts Further options for ghostscript
 #' @param Force When FALSE, only update file for newer input
 #' @return character vector with path to pdfout
 #' @author jefferis
 #' @export
-gscompress<-function(pdfin,pdfout,firstpage,lastpage,pdflevel="1.5",Force=TRUE){
+#' @examples
+#' \dontrun{
+#' gscompress('statistics.pdf',gsopts='-dSubsetFonts=true -dEmbedAllFonts=true')
+#' }
+gscompress<-function(pdfin,pdfout,firstpage,lastpage,pdflevel="1.5",gsopts="",Force=TRUE){
   if(is.numeric(pdflevel)) pdflevel=as.character(pdflevel)
   if(missing(pdfout)) pdfout=sub("\\.pdf$","_gso.pdf",pdfin)
   
@@ -21,7 +26,7 @@ gscompress<-function(pdfin,pdfout,firstpage,lastpage,pdflevel="1.5",Force=TRUE){
   }
   
   basic_cmd=sprintf(paste('gs -sDEVICE=pdfwrite -dCompatibilityLevel=%s -dNOPAUSE',
-          ' -dQUIET -dBATCH -dAutoRotatePages="/None"'),pdflevel)
+          ' -dQUIET -dBATCH -dAutoRotatePages="/None"',gsopts),pdflevel)
   if(!missing(firstpage))
     basic_cmd=paste(basic_cmd,' -dFirstPage=',firstpage,sep="")
   if(!missing(lastpage))

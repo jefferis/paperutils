@@ -3,7 +3,7 @@
 \title{Compress a pdf using ghostscript}
 \usage{
   gscompress(pdfin, pdfout, firstpage, lastpage,
-    pdflevel = "1.5", Force = TRUE)
+    pdflevel = "1.5", gsopts = "", Force = TRUE)
 }
 \arguments{
   \item{pdfin,pdfout}{Input and Output pdfs}
@@ -13,6 +13,8 @@
 
   \item{pdflevel}{Minium compatible pdf version of output
   file}
+
+  \item{gsopts}{Further options for ghostscript}
 
   \item{Force}{When FALSE, only update file for newer
   input}
@@ -25,6 +27,11 @@
 }
 \details{
   This seems to work well for pdflatex output
+}
+\examples{
+\dontrun{
+gscompress('statistics.pdf',gsopts='-dSubsetFonts=true -dEmbedAllFonts=true')
+}
 }
 \author{
   jefferis
