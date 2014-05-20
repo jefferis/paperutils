@@ -9,6 +9,7 @@
 #' @param gsopts Further options for ghostscript
 #' @param Force When FALSE, only update file for newer input
 #' @return character vector with path to pdfout
+#' @importFrom nat.utils RunCmdForNewerInput
 #' @author jefferis
 #' @export
 #' @examples

@@ -12,7 +12,7 @@ Description: Utility functions to work with LyX text files, Illustrator figures
     compressing pdflatex output using ghostscript. Finally has options to read
     and write bookmarks.
 URL: https://github.com/jefferis/paperutils
-Depends:
+Imports:
     nat.utils
 Suggests:
     testthat,
