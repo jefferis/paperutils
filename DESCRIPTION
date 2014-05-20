@@ -18,11 +18,3 @@ Suggests:
     testthat,
     roxygen2,
 SystemRequirements: pdftk, ghostscript, perl
-Collate:
-    'paperutils-package.r'
-    'gs.r'
-    'pdftk.r'
-    'pdfbookmarks.r'
-    'pdflatexutils.r'
-    'aiutils.r'
-    'lyxutils.r'

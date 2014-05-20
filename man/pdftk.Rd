@@ -2,9 +2,9 @@
 \alias{pdftk}
 \title{Return absolute path to pdftk binary}
 \usage{
-  pdftk()
+pdftk()
 }
 \description{
-  Return absolute path to pdftk binary
+Return absolute path to pdftk binary
 }
 

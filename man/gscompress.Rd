@@ -2,8 +2,8 @@
 \alias{gscompress}
 \title{Compress a pdf using ghostscript}
 \usage{
-  gscompress(pdfin, pdfout, firstpage, lastpage,
-    pdflevel = "1.5", gsopts = "", Force = TRUE)
+gscompress(pdfin, pdfout, firstpage, lastpage, pdflevel = "1.5",
+  gsopts = "", Force = TRUE)
 }
 \arguments{
   \item{pdfin,pdfout}{Input and Output pdfs}
@@ -20,13 +20,13 @@
   input}
 }
 \value{
-  character vector with path to pdfout
+character vector with path to pdfout
 }
 \description{
-  When pdfout is missing it defaults to <input>_gso.pdf
+When pdfout is missing it defaults to <input>_gso.pdf
 }
 \details{
-  This seems to work well for pdflatex output
+This seems to work well for pdflatex output
 }
 \examples{
 \dontrun{
@@ -34,6 +34,6 @@ gscompress('statistics.pdf',gsopts='-dSubsetFonts=true -dEmbedAllFonts=true')
 }
 }
 \author{
-  jefferis
+jefferis
 }
 

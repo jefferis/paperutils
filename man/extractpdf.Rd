@@ -2,8 +2,8 @@
 \alias{extractpdf}
 \title{Extract pages from a pdf to new pdf(s)}
 \usage{
-  extractpdf(pdfin, pages, pdfout, prefix = NULL,
-    DryRun = F, gscomp = FALSE, bookmarks = NULL)
+extractpdf(pdfin, pages, pdfout, prefix = NULL, DryRun = F,
+  gscomp = FALSE, bookmarks = NULL)
 }
 \arguments{
   \item{pdfin,pdfout}{Path to input and output pdf}
@@ -22,7 +22,7 @@
   can be used to add bookmarks to the output pdf.}
 }
 \description{
-  Extract pages from a pdf to new pdf(s)
+Extract pages from a pdf to new pdf(s)
 }
 \examples{
 \dontrun{
@@ -33,9 +33,9 @@ extractpdf(pdffile,figurepages,prefix='LastAuthor_',gscomp=TRUE)
 }
 }
 \author{
-  jefferis
+jefferis
 }
 \seealso{
-  \code{\link{gscompress}}
+\code{\link{gscompress}}
 }
 

@@ -4,7 +4,7 @@
 \alias{paperutils-package}
 \title{paperutils: PDF manipulation utilities (wrapping pdftk and ghostscript)}
 \description{
-  paperutils: PDF manipulation utilities (wrapping pdftk
-  and ghostscript)
+paperutils: PDF manipulation utilities (wrapping pdftk and
+ghostscript)
 }
 

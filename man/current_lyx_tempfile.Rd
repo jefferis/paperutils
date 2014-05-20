@@ -2,8 +2,8 @@
 \alias{current_lyx_tempfile}
 \title{Full path to most recent temporary pdf previewed by lyx}
 \usage{
-  current_lyx_tempfile(ftype = c("pdf", "aux", "dir", "tex", "lof"),
-    lyxfile = NULL, tmproot = NULL)
+current_lyx_tempfile(ftype = c("pdf", "aux", "dir", "tex", "lof"),
+  lyxfile = NULL, tmproot = NULL)
 }
 \arguments{
   \item{ftype}{Type of file (or 'dir' for encolsing
@@ -15,15 +15,15 @@
   containing LyX tempdir}
 }
 \value{
-  Path to current lyx temporary directory /pdf
+Path to current lyx temporary directory /pdf
 }
 \description{
-  Can also return e.g. aux file or containing directory.
+Can also return e.g. aux file or containing directory.
 }
 \details{
-  Uses the modification date of the tex file in the
-  directory to choose lyx dir in case of ambiguity => last
-  previewed file.
+Uses the modification date of the tex file in the directory
+to choose lyx dir in case of ambiguity => last previewed
+file.
 }
 \examples{
 \dontrun{
@@ -36,6 +36,6 @@ current_lyx_tempfile(lyxfile='main.lyx')
 }
 }
 \author{
-  jefferis
+jefferis
 }
 

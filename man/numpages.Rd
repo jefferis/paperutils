@@ -2,18 +2,18 @@
 \alias{numpages}
 \title{Return number of pages in pdf}
 \usage{
-  numpages(pdf)
+numpages(pdf)
 }
 \arguments{
   \item{pdf}{Path to input pdf file}
 }
 \value{
-  number of pages
+number of pages
 }
 \description{
-  Return number of pages in pdf
+Return number of pages in pdf
 }
 \author{
-  jefferis
+jefferis
 }
 
