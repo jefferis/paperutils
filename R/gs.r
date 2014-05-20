@@ -17,6 +17,7 @@
 #' }
 gscompress<-function(pdfin,pdfout,firstpage,lastpage,pdflevel="1.5",gsopts="",Force=TRUE){
   if(is.numeric(pdflevel)) pdflevel=as.character(pdflevel)
+  pdfin=normalizePath(pdfin)
   if(missing(pdfout)) pdfout=sub("\\.pdf$","_gso.pdf",pdfin)
   
   if(pdfin==pdfout){
