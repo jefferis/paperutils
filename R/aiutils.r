@@ -15,13 +15,18 @@
 #' stopifnot(length(lfs)==2)
 linked_from_ai<-function(x,AbsolutePaths=TRUE,mustWork=NA){
   ail=system.file('exec','ailinkedfiles.pl',package='paperutils',mustWork = TRUE)
+  
   cmd=paste(ail,shQuote(x))
-  rval=system(cmd,intern=TRUE)
-  # now get rid of comments
-  tc=textConnection(grep("^#",invert=T,value=T,rval))
-  on.exit(close(tc))
-  # and use scan to dequote
-  ff=scan(tc,what='',quiet=TRUE)
+  rval=try(system(cmd, intern=TRUE), silent = TRUE)
+  if(inherits(rval,'try-error')) {
+    ff=ailinkedfiles(x)
+  } else {
+    # now get rid of comments
+    tc=textConnection(grep("^#",invert=T,value=T,rval))
+    on.exit(close(tc))
+    # and use scan to dequote
+    ff=scan(tc,what='',quiet=TRUE)
+  }
   if(AbsolutePaths){
     owd=setwd(dirname(x))
     on.exit(setwd(owd),add=TRUE)
@@ -40,10 +45,10 @@ linked_from_ai<-function(x,AbsolutePaths=TRUE,mustWork=NA){
 #' @export
 #' @family linked_from
 ailinkedfiles<-function(x){
-  zz<-readLines(x)
-  i=grep('%%DocumentFiles',zz,fixed=T,useBytes=T)
+  zz<-readLines(x, warn = FALSE)
+  i=grep('%%DocumentFiles',zz,fixed=TRUE,useBytes=TRUE)
   if(!length(i)) return(character(0))
   ff=zz[i]
-  while(length(grep('^%%+',l<-zz[i<-i+1],perl=T))) ff<-c(ff,l)
+  while(length(grep('^%%+',l<-zz[i<-i+1],perl=TRUE))) ff<-c(ff,l)
   sub("^%%(DocumentFiles:|\\+)","",ff)
 }
