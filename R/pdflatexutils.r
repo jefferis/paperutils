@@ -31,7 +31,7 @@ find_figs<-function(auxfile,ftype=c("Fig","Table")){
 find_supplemental<-function(auxfile,numpages,lastRegularPage){
   if(missing(lastRegularPage)){
     t=readLines(auxfile)
-    tt=t[grep(paste("{Supplementa(l|ry) Information}",sep=""),t,perl=TRUE,ignore.case=TRUE)]
+    tt=t[grep(paste("{(Supporting|Supplementa(l|ry)) Information}",sep=""),t,perl=TRUE,ignore.case=TRUE)]
     supplementalStart=as.integer(sub(".*{section}.*}{(\\d+)}{.*","\\1",tt,perl=TRUE))
     if(length(supplementalStart)==0) stop("Unable to locate SI")
     else if(length(supplementalStart)>1)
