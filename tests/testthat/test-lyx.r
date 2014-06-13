@@ -1,7 +1,7 @@
 context("Test handling of LyX files")
 
 test_that("Find files in current LyX directory", {
-  lyxtmpdir=file.path(dirname(getwd()),'lyx_tmpdir')
+  lyxtmpdir=file.path(getwd(),'testdata','lyx_tmpdir')
 
   expect_equal(current_lyx_tempfile('dir',tmproot=lyxtmpdir),
                lyxtmpdir,
@@ -18,7 +18,7 @@ test_that("Find files in current LyX directory", {
 })
 
 test_that("Find files linked from LyX file", {
-  lyxfile=file.path(dirname(getwd()),'lyx','test.lyx')
+  lyxfile=file.path(getwd(),'testdata','lyx','test.lyx')
   linked_figs<-linked_from_lyx(lyxfile,AbsolutePaths=FALSE)
   baseline=c("fig1.pdf", "fig2.pdf", "composite_fig.pdf")
   expect_equal(length(linked_figs), 
@@ -27,7 +27,7 @@ test_that("Find files linked from LyX file", {
   expect_equal(linked_figs, baseline,
               info='Correct relative path to linked files')
   
-  path_to_lyxdir=system.file('lyx',package='paperutils')
+  path_to_lyxdir=system.file('tests','testthat','testdata','lyx',package='paperutils')
   linked_figs_abs=linked_from_lyx(lyxfile,AbsolutePaths=TRUE)
   baseline_abs=file.path(path_to_lyxdir,baseline)
   expect_equal(linked_figs_abs, baseline_abs,
