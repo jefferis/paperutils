@@ -13,7 +13,7 @@ Description: Utility functions to work with LyX text files, Illustrator figures
     and write bookmarks.
 URL: https://github.com/jefferis/paperutils
 Imports:
-    nat.utils
+    nat.utils (>= 0.4.1)
 Suggests:
     testthat,
     roxygen2,

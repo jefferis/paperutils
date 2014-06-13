@@ -36,6 +36,6 @@ gscompress<-function(pdfin,pdfout,firstpage,lastpage,pdflevel="1.5",gsopts="",Fo
   
   cmd=paste(basic_cmd,sprintf('-sOutputFile=%s %s',shQuote(pdfout),shQuote(pdfin)))
   cat(cmd,"\n")
-  RunCmdForNewerInput(cmd,pdfin,pdfout)
+  RunCmdForNewerInput(cmd,pdfin,pdfout,Force=Force)
   return(pdfout)
 }
