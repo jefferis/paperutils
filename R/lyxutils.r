@@ -4,8 +4,10 @@
 #' @param x Path to LyX file
 #' @inheritParams linked_from_ai
 #' @examples
-#' \dontrun{linked_from_lyx('/GD/LMBD/Papers/2012fruLHNs/lyx/main.lyx')}
-#' linked_from_lyx(system.file('lyx','test.lyx',package='paperutils'))
+#' \dontrun{
+#' linked_from_lyx('/GD/LMBD/Papers/2012fruLHNs/lyx/main.lyx')
+#' linked_from_lyx(system.file('tests','testthat','testdata','lyx','test.lyx',package='paperutils'))
+#' }
 #' @author jefferis
 #' @export
 #' @family lyx,linked_from

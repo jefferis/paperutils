@@ -19,8 +19,10 @@ Return all the files linked from a LyX file
 by default make paths absolute using normalizePath
 }
 \examples{
-\dontrun{linked_from_lyx('/GD/LMBD/Papers/2012fruLHNs/lyx/main.lyx')}
-linked_from_lyx(system.file('lyx','test.lyx',package='paperutils'))
+\dontrun{
+linked_from_lyx('/GD/LMBD/Papers/2012fruLHNs/lyx/main.lyx')
+linked_from_lyx(system.file('tests','testthat','testdata','lyx','test.lyx',package='paperutils'))
+}
 }
 \author{
 jefferis

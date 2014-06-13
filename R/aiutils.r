@@ -11,8 +11,10 @@
 #' @seealso ailinkedfiles
 #' @family linked_from
 #' @examples
-#' lfs=linked_from_ai(system.file('lyx','composite_fig.pdf',package='paperutils'))
+#' \dontrun{
+#' lfs=linked_from_ai(system.file('tests','testthat','testdata','lyx','composite_fig.pdf',package='paperutils'))
 #' stopifnot(length(lfs)==2)
+#' }
 linked_from_ai<-function(x,AbsolutePaths=TRUE,mustWork=NA){
   ail=system.file('exec','ailinkedfiles.pl',package='paperutils',mustWork = TRUE)
   

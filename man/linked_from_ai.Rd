@@ -19,8 +19,10 @@ Character vector of paths to linked files
 List all linked files from given illustrator file (ai or pdf)
 }
 \examples{
-lfs=linked_from_ai(system.file('lyx','composite_fig.pdf',package='paperutils'))
+\dontrun{
+lfs=linked_from_ai(system.file('tests','testthat','testdata','lyx','composite_fig.pdf',package='paperutils'))
 stopifnot(length(lfs)==2)
+}
 }
 \author{
 jefferis
