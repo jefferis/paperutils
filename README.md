@@ -20,6 +20,7 @@ to prepare our journal articles for submission. This package contains functions 
 
 ### Released versions
     install.packages("paperutils",repos='http://jefferislab.org/R',type='source')
+
 ### Bleeding Edge
 Straight from github with Hadley Wickham's [devtools](https://github.com/hadley/devtools) package:
 
