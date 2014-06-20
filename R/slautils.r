@@ -2,6 +2,7 @@
 
 #' @param x path to Scribus file.
 #' @return Character vector of paths to linked files.
+#' @export
 sla_linked_files <- function(x) {
   # Read in Scribus file
   lines <- readLines(path.expand(x))
@@ -28,6 +29,7 @@ sla_linked_files <- function(x) {
 #'
 #' @param x path to Scribus file.
 #' @param OutPath path to write re-linked Scribus file to.
+#' @export
 fix_sla_links <- function(x, OutPath=x) {
   lines <- readLines(path.expand(x))
   links <- sla_linked_files(x)

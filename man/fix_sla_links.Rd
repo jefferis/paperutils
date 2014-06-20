@@ -3,10 +3,12 @@
 \alias{fix_sla_links}
 \title{Re-link all linked files in Scribus file in relative manner}
 \usage{
-fix_sla_links(x)
+fix_sla_links(x, OutPath = x)
 }
 \arguments{
 \item{x}{path to Scribus file.}
+
+\item{OutPath}{path to write re-linked Scribus file to.}
 }
 \description{
 Re-link all linked files in Scribus file in relative manner
