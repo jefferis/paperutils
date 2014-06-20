@@ -3,7 +3,7 @@
 #' @param x path to Scribus file.
 #' @return Character vector of paths to linked files.
 #' @export
-sla_linked_files <- function(x) {
+linked_from_sla <- function(x) {
   # Read in Scribus file
   lines <- readLines(path.expand(x))
   linked_lines <- lines[grepl("PFILE=", lines)]
@@ -32,7 +32,7 @@ sla_linked_files <- function(x) {
 #' @export
 fix_sla_links <- function(x, OutPath=x) {
   lines <- readLines(path.expand(x))
-  links <- sla_linked_files(x)
+  links <- linked_from_sla(x)
   strip_indices <- regexpr(dirname(x), links)
   patched_links <- links
   patched_links <- substr(patched_links, strip_indices + attr(strip_indices, "match.length") + 1, 100000)
