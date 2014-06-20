@@ -33,7 +33,7 @@ sla_linked_files <- function(x) {
 fix_sla_links <- function(x, OutPath=x) {
   lines <- readLines(path.expand(x))
   links <- sla_linked_files(x)
-  strip_indices <- regexpr(dirname(x), linked_files)
+  strip_indices <- regexpr(dirname(x), links)
   patched_links <- links
   patched_links <- substr(patched_links, strip_indices + attr(strip_indices, "match.length") + 1, 100000)
   for(i in 1:length(links)) {
