@@ -25,9 +25,10 @@ sla_linked_files <- function(x) {
 
 
 #' Re-link all linked files in Scribus file in relative manner
-
+#'
 #' @param x path to Scribus file.
-fix_sla_links <- function(x) {
+#' @param OutPath path to write re-linked Scribus file to.
+fix_sla_links <- function(x, OutPath=x) {
   lines <- readLines(path.expand(x))
   links <- sla_linked_files(x)
   strip_indices <- regexpr(dirname(x), linked_files)
@@ -36,5 +37,5 @@ fix_sla_links <- function(x) {
   for(i in 1:length(links)) {
     lines <- gsub(links[i], patched_links[i], lines)
   }
-  writeLines(lines, x)
+  writeLines(lines, OutPath)
 }
