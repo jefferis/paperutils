@@ -1,5 +1,5 @@
 #' List all linked files from given Scribus file (sla)
-
+#' 
 #' @param x path to Scribus file.
 #' @return Character vector of paths to linked files.
 #' @export
