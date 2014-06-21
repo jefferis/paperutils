@@ -25,11 +25,14 @@ linked_from_sla <- function(x) {
 }
 
 
-#' Re-link all linked files in Scribus file in relative manner
+#' Convert linked files in Scribus file from absolute to relative paths
 #' 
+#' @details when \code{writeout=TRUE} the existing file is fixed and
+#'   overwritten.
 #' @param x path to Scribus file.
 #' @param writeout logical indicating whether to write out fixed Scribus file or
 #'   character vector specifying path for file.
+#' @return character vector of fixed paths (invisibly when \code{writeout=TRUE})
 #' @export
 fix_sla_links <- function(x, writeout=FALSE) {
   if(is.logical(writeout)) writeout=ifelse(writeout, x, '')
