@@ -1,3 +1,9 @@
+paperutils 0.1-5
+================
+* Add linked_from_sla() to find images linked from Scribus files [ajdm]
+* Add fix_sla_links() to covert absolute links in Scribus files to relative [ajdm]
+* Fix: gscompress now honours Force=TRUE
+
 paperutils 0.1-4
 ================
 * normalise input path to gscompress()
