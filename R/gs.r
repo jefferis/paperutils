@@ -20,9 +20,10 @@ gscompress<-function(pdfin,pdfout,firstpage,lastpage,pdflevel="1.5",gsopts="",Fo
   if(is.numeric(pdflevel)) pdflevel=as.character(pdflevel)
   pdfin=normalizePath(pdfin)
   if(missing(pdfout)) pdfout=sub("\\.pdf$","_gso.pdf",pdfin)
-  
+  else pdfout=normalizePath(pdfout, mustWork = FALSE)
+  # save a copy of output file path
+  real_out=pdfout
   if(pdfin==pdfout){
-    real_out=pdfout
     pdfout=tempfile(basename(pdfout),tmpdir=dirname(pdfout),fileext='.pdf')
     on.exit(file.rename(pdfout,real_out))
   }
@@ -37,5 +38,5 @@ gscompress<-function(pdfin,pdfout,firstpage,lastpage,pdflevel="1.5",gsopts="",Fo
   cmd=paste(basic_cmd,sprintf('-sOutputFile=%s %s',shQuote(pdfout),shQuote(pdfin)))
   cat(cmd,"\n")
   RunCmdForNewerInput(cmd,pdfin,pdfout,Force=Force)
-  return(pdfout)
+  return(real_out)
 }
