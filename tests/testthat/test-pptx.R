@@ -32,4 +32,7 @@ test_that("zip_pptx_dir works", {
   all_files=unzip(pptx3, list = T)$Name
   zip_pptx_dir(unzip_pptx(pptx), pptx3, files=all_files)
   expect_true(all.equal.zip(pptx, pptx3))
+  
+  expect_error(zip_pptx_dir(unzip_pptx(pptx), pptx3, action='error'))
 })
+
