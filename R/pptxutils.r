@@ -108,3 +108,15 @@ pdf2png<-function(pdf, png, res=300) {
   cmd=paste("convert -density",res, shQuote(pdf), shQuote(png))
   system(cmd)==0
 }
+
+# Utility function to check if two zip files are equal by content
+# files can come in different and order and be compressed in a different way
+all.equal.zip<-function(x, y) {
+  normalised_zi<-function(f) {
+    zi=zipinfo(f)
+    # NB drop rownames after reordering
+    as.matrix(zi[order(zi$Name),c("Name","CRC.32")], rownames.force=F)
+  }
+  
+  all.equal(normalised_zi(x), normalised_zi(y))
+}

@@ -17,3 +17,11 @@ test_that("unzip_pptx works", {
   zd=unzip(pptx, list = T)
   expect_true(all(zd[,'Name']%in%ff))
 })
+
+test_that("zip_pptx_dir works", {
+  td=unzip_pptx(pptx)
+  pptx2=tempfile(basename(pptx), fileext = '.pptx')
+  expect_is(zip_pptx_dir(td, pptx2), "character")
+  
+  expect_true(all.equal.zip(pptx, pptx2))
+})
