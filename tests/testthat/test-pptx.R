@@ -24,4 +24,7 @@ test_that("zip_pptx_dir works", {
   expect_is(zip_pptx_dir(td, pptx2), "character")
   
   expect_true(all.equal.zip(pptx, pptx2))
+  pptx3=tempfile(basename(pptx), fileext = '.pptx')
+  file.copy(pptx, pptx3)
+  zip_pptx_dir(unzip_pptx(pptx), pptx3, files=character())
 })

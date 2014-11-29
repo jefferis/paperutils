@@ -38,6 +38,8 @@ zip_pptx_dir<-function(x, pptx, action=c("freshen", "update", "error"), files=NU
   on.exit(setwd(owd))
   
   ff=if(!is.null(files)) {
+    # nothing to do
+    if(!length(files)) return(pptx)
     # check if specified files exist
     if(!all(file.exists(files))) stop("Some files do not exist")
     # convert these to paths relative to
