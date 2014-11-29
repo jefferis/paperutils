@@ -1,6 +1,7 @@
 context("Test handling of PowerPoint files")
 
 pptx="testdata/pptx/test_pdf.pptx"
+pptx.nopdf="testdata/pptx/test_nopdf.pptx"
 
 test_that("is.pptx works", {
   expect_true(is.pptx(pptx))
@@ -36,3 +37,9 @@ test_that("zip_pptx_dir works", {
   expect_error(zip_pptx_dir(unzip_pptx(pptx), pptx3, action='error'))
 })
 
+test_that("convert_pptx_pdfs works", {
+  # should be identical when no pdf involved
+  tf=tempfile(fileext = '.pptx')
+  expect_is(pptx.nopdf.conv<-convert_pptx_pdfs(pptx.nopdf, tf), "character")
+  expect_true(all.equal.zip(pptx.nopdf, pptx.nopdf.conv))
+})
