@@ -27,4 +27,9 @@ test_that("zip_pptx_dir works", {
   pptx3=tempfile(basename(pptx), fileext = '.pptx')
   file.copy(pptx, pptx3)
   zip_pptx_dir(unzip_pptx(pptx), pptx3, files=character())
+  expect_true(all.equal.zip(pptx, pptx3))
+  
+  all_files=unzip(pptx3, list = T)$Name
+  zip_pptx_dir(unzip_pptx(pptx), pptx3, files=all_files)
+  expect_true(all.equal.zip(pptx, pptx3))
 })
