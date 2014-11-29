@@ -42,4 +42,9 @@ test_that("convert_pptx_pdfs works", {
   tf=tempfile(fileext = '.pptx')
   expect_is(pptx.nopdf.conv<-convert_pptx_pdfs(pptx.nopdf, tf), "character")
   expect_true(all.equal.zip(pptx.nopdf, pptx.nopdf.conv))
+  
+  tf2=tempfile(fileext = '.pptx')
+  expect_is(pptx.conv<-convert_pptx_pdfs(pptx, tf2), "character")
+  expect_equal(all.equal.zip(pptx.conv, pptx), "1 string mismatch")
 })
+
