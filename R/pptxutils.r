@@ -73,21 +73,21 @@ convert_pptx_pdfs<-function(x, outpptx=NULL, pngres=300, ...) {
   # first find them
   pdfs=dir(x, pattern = "^image.*.pdf$", full.names = T, recursive = T)
   message("There are ", length(pdfs), " pdfs")
-  if(!length(pdfs))
-    return(NULL)
-  
-  # now construct png paths
-  # pngs should be called image(n+1).png
-  pdfstems=tools::file_path_sans_ext(pdfs)
-  n=as.integer(sub("^image([0-9]+)\\.pdf$", "\\1", basename(pdfs)))
-  if(any(is.na(n))) stop("Unable to parse pdf names")
-  pngs=file.path(dirname(pdfs), paste0("image", n+1, ".png"))
-  if(!all(file.exists(pngs)))
-    stop("PowerPoint should have already made pngs for all pdfs when you saved, but I can't find these!")
-  
-  # now actually convert
-  successes=mapply(pdf2png, pdfs, pngs, res=pngres)
-  if(!all(successes)) stop("Failed to convert some pdfs to png!")
+  pngs=character()
+  if(length(pdfs)) {
+    # now construct png paths if there are some pdfs
+    # pngs should be called image(n+1).png
+    pdfstems=tools::file_path_sans_ext(pdfs)
+    n=as.integer(sub("^image([0-9]+)\\.pdf$", "\\1", basename(pdfs)))
+    if(any(is.na(n))) stop("Unable to parse pdf names")
+    pngs=file.path(dirname(pdfs), paste0("image", n+1, ".png"))
+    if(!all(file.exists(pngs)))
+      stop("PowerPoint should have already made pngs for all pdfs when you saved, but I can't find these!")
+    
+    # now actually convert
+    successes=mapply(pdf2png, pdfs, pngs, res=pngres)
+    if(!all(successes)) stop("Failed to convert some pdfs to png!")
+  }
   
   if(!is.null(outpptx))
     zip_pptx_dir(x, outpptx, files = pngs, ...)
