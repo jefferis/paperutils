@@ -9,3 +9,11 @@ test_that("is.pptx works", {
   writeLines("Not a pptx file", tf)
   expect_false(is.pptx(tf, Verbose=F))
 })
+
+test_that("unzip_pptx works", {
+  td=tempfile('pptxout')
+  expect_equal(unzip_pptx(pptx, td), td)
+  ff=dir(td, recursive = T, all.files = T)
+  zd=unzip(pptx, list = T)
+  expect_true(all(zd[,'Name']%in%ff))
+})
