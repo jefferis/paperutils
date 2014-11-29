@@ -43,7 +43,7 @@ zip_pptx_dir<-function(x, pptx, action=c("freshen", "update", "error"), files=NU
     # convert these to paths relative to
     abs2rel(normalizePath(files))
   } else {
-    ff=dir(recursive = T, all.files = T, include.dirs = T)
+    ff=dir(recursive = T, all.files = T)
     Filter(function(f) basename(f)!=".DS_Store", ff) 
   }
   
