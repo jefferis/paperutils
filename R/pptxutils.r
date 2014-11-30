@@ -68,8 +68,13 @@ zip_pptx_dir<-function(x, pptx, action=c("freshen", "update", "error"), files=NU
 #' 
 #' PowerPoint 2010 et al will convert any pdfs that have been dropped onto 
 #' slides into bitmap pngs. Unfortuantely they do this at 72 dpi, which is 
-#' typically much too low resolution. This function makes higher resolution
-#' versions of the pngs.
+#' typically much too low resolution. This function makes higher resolution 
+#' versions of the pngs. Note that it will not upgrade pngs that already meet 
+#' the requested resolution.
+#' 
+#' @details This function depends on having the
+#'   \href{http://www.imagemagick.org/}{ImageMagick} \bold{convert} function in
+#'   the path.
 #' @param x A PowerPoint pptx file or an expanded directory.
 #' @param outpptx Path to output pptx file
 #' @param pngres The resolution of the new png file
@@ -107,7 +112,12 @@ convert_pptx_pdfs<-function(x, outpptx=NULL, pngres=300, ...) {
       stop("PowerPoint should have already made pngs for all pdfs when you saved, but I can't find these!")
     
     # now actually convert
-    successes=mapply(pdf2png, pdfs, pngs, res=pngres)
+    pdf2pngwcheck<-function(pdf, png, res, ...) {
+      if(pngres(png)<res){
+        pdf2png(pdf=pdf, png=png, res=res, ...)
+      } else TRUE
+    }
+    successes=mapply(pdf2pngwcheck, pdfs, pngs, res=pngres)
     if(!all(successes)) stop("Failed to convert some pdfs to png!")
   }
   

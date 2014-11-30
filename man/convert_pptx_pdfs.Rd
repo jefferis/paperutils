@@ -18,7 +18,13 @@ convert_pptx_pdfs(x, outpptx = NULL, pngres = 300, ...)
 PowerPoint 2010 et al will convert any pdfs that have been dropped onto
 slides into bitmap pngs. Unfortuantely they do this at 72 dpi, which is
 typically much too low resolution. This function makes higher resolution
-versions of the pngs.
+versions of the pngs. Note that it will not upgrade pngs that already meet
+the requested resolution.
+}
+\details{
+This function depends on having the
+  \href{http://www.imagemagick.org/}{ImageMagick} \bold{convert} function in
+  the path.
 }
 \seealso{
 \code{\link{zip_pptx_dir}}
