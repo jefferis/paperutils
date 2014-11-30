@@ -156,14 +156,14 @@ pdf2png<-function(pdf, png, res=300) {
 
 # Utility function to check if two zip files are equal by content
 # files can come in different and order and be compressed in a different way
-all.equal.zip<-function(x, y) {
+all.equal.zip<-function(x, y, strict=FALSE) {
   normalised_zi<-function(f) {
     zi=nat.utils::zipinfo(f)
     # NB drop rownames after reordering
     as.matrix(zi[order(zi$Name),c("Name","CRC.32")], rownames.force=F)
   }
-  
-  all.equal(normalised_zi(x), normalised_zi(y))
+  if(strict) all.equal(nat.utils::zipinfo(x), nat.utils::zipinfo(y))
+  else all.equal(normalised_zi(x), normalised_zi(y))
 }
 
 #' Return (horizontal) resolution in dots per inch of a png file 
