@@ -154,7 +154,7 @@ is.pptx<-function(x, Verbose=TRUE) {
 #' @return Logical value indicating success (or failure) of operation
 #' @export
 pdf2png<-function(pdf, png, res=300) {
-  cmd=paste("convert -density",res, shQuote(pdf), shQuote(png))
+  cmd=paste(convert(T), "-density",res, shQuote(pdf), shQuote(png))
   system(cmd)==0
 }
 
@@ -174,7 +174,17 @@ all.equal.zip<-function(x, y, strict=FALSE) {
 #' @param x Path to a png file
 #' @return numeric vector giving resolution in dots per inch
 pngres<-function(x) {
-  cmd=paste('convert  -print "%x" ', shQuote(x), ' null:')
+  cmd=paste(convert(T),'-print "%x" ', shQuote(x), ' null:')
   x=system(cmd, intern = T)
   scan(text=x, n = 1, quiet = T)*2.54
+}
+
+convert<-function(mustWork=FALSE) {
+  if(is.null(w<-getOption("paperutils.convert"))){
+    w=Sys.which("convert")[[1]]
+    options(paperutils.convert=w)
+  }
+  if(mustWork && !nzchar(w))
+    stop("Cannot find system unzip command!")
+  return(w)
 }
