@@ -45,14 +45,16 @@ test_that("convert_pptx_pdfs works", {
   expect_is(pptx.nopdf.conv<-convert_pptx_pdfs(pptx.nopdf, tf), "character")
   expect_true(all.equal.zip(pptx.nopdf, pptx.nopdf.conv))
   
-  tf2=tempfile(fileext = '.pptx')
-  expect_is(pptx.conv<-convert_pptx_pdfs(pptx, tf2), "character")
-  expect_equal(all.equal.zip(pptx.conv, pptx), "1 string mismatch")
-  
-  # should be identical when res only set to 
-  tf3=tempfile(fileext = '.pptx')
-  expect_is(tf3<-convert_pptx_pdfs(pptx, tf3, pngres=72), "character")
-  expect_true(all.equal.zip(tf3, pptx, strict=TRUE))
-  # check stricy=TRUE works
-  expect_true(all.equal.zip(pptx, pptx, strict=TRUE))
+  if(isTRUE(nzchar(convert()))){
+    tf2=tempfile(fileext = '.pptx')
+    expect_is(pptx.conv<-convert_pptx_pdfs(pptx, tf2), "character")
+    expect_equal(all.equal.zip(pptx.conv, pptx), "1 string mismatch")
+    
+    # should be identical when res only set to 
+    tf3=tempfile(fileext = '.pptx')
+    expect_is(tf3<-convert_pptx_pdfs(pptx, tf3, pngres=72), "character")
+    expect_true(all.equal.zip(tf3, pptx, strict=TRUE))
+    # check stricy=TRUE works
+    expect_true(all.equal.zip(pptx, pptx, strict=TRUE))
+  }
 })
