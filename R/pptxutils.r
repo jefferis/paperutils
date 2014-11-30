@@ -155,3 +155,12 @@ all.equal.zip<-function(x, y) {
   
   all.equal(normalised_zi(x), normalised_zi(y))
 }
+
+#' Return (horizontal) resolution in dots per inch of a png file 
+#' @param x Path to a png file
+#' @return numeric vector giving resolution in dots per inch
+pngres<-function(x) {
+  cmd=paste('convert  -print "%x" ', shQuote(x), ' null:')
+  x=system(cmd, intern = T)
+  scan(text=x, n = 1, quiet = T)*2.54
+}
