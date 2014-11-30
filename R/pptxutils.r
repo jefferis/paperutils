@@ -185,6 +185,6 @@ convert<-function(mustWork=FALSE) {
     options(paperutils.convert=w)
   }
   if(mustWork && !nzchar(w))
-    stop("Cannot find system unzip command!")
+    stop("Cannot find ImageMagick convert command!")
   return(w)
 }
