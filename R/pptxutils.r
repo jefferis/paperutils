@@ -115,7 +115,7 @@ pdf2png<-function(pdf, png, res=300) {
 # files can come in different and order and be compressed in a different way
 all.equal.zip<-function(x, y) {
   normalised_zi<-function(f) {
-    zi=zipinfo(f)
+    zi=nat.utils::zipinfo(f)
     # NB drop rownames after reordering
     as.matrix(zi[order(zi$Name),c("Name","CRC.32")], rownames.force=F)
   }
