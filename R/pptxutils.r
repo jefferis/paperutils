@@ -182,9 +182,13 @@ pngres<-function(x) {
 convert<-function(mustWork=FALSE) {
   if(is.null(w<-getOption("paperutils.convert"))){
     w=Sys.which("convert")[[1]]
+    # check this looks like ImageMagick convert
+    if(!nzchar(w) || !length(grep("ImageMagick", system(w, intern=T)[1:4], fixed = T)))
+      w=""
     options(paperutils.convert=w)
   }
   if(mustWork && !nzchar(w))
-    stop("Cannot find ImageMagick convert command!")
+    stop("Cannot find ImageMagick convert command!",
+         " See ?paperutils for how to specify location manually!")
   return(w)
 }
