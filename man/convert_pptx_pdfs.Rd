@@ -8,7 +8,7 @@ convert_pptx_pdfs(x, outpptx = NULL, pngres = 300, ...)
 \arguments{
 \item{x}{A PowerPoint pptx file or an expanded directory.}
 
-\item{outpptx}{Path to output pptx file}
+\item{outpptx}{Path to output pptx file (default "inputfilestem_fixed.pptx")}
 
 \item{pngres}{The resolution of the new png file}
 
@@ -19,7 +19,8 @@ PowerPoint 2010 et al will convert any pdfs that have been dropped onto
 slides into bitmap pngs. Unfortuantely they do this at 72 dpi, which is
 typically much too low resolution. This function makes higher resolution
 versions of the pngs. Note that it will not upgrade pngs that already meet
-the requested resolution.
+the requested resolution. If this means that no images at all are upgraded
+then the output file will be identical to the input.
 }
 \details{
 This function depends on having the

@@ -70,13 +70,14 @@ zip_pptx_dir<-function(x, pptx, action=c("freshen", "update", "error"), files=NU
 #' slides into bitmap pngs. Unfortuantely they do this at 72 dpi, which is 
 #' typically much too low resolution. This function makes higher resolution 
 #' versions of the pngs. Note that it will not upgrade pngs that already meet 
-#' the requested resolution.
+#' the requested resolution. If this means that no images at all are upgraded 
+#' then the output file will be identical to the input.
 #' 
-#' @details This function depends on having the
-#'   \href{http://www.imagemagick.org/}{ImageMagick} \bold{convert} function in
+#' @details This function depends on having the 
+#'   \href{http://www.imagemagick.org/}{ImageMagick} \bold{convert} function in 
 #'   the path.
 #' @param x A PowerPoint pptx file or an expanded directory.
-#' @param outpptx Path to output pptx file
+#' @param outpptx Path to output pptx file (default "inputfilestem_fixed.pptx")
 #' @param pngres The resolution of the new png file
 #' @param ... Additional arguments passed to \code{zip_pptx_dir}
 #' @export
@@ -115,10 +116,13 @@ convert_pptx_pdfs<-function(x, outpptx=NULL, pngres=300, ...) {
     pdf2pngwcheck<-function(pdf, png, res, ...) {
       if(pngres(png)<res){
         pdf2png(pdf=pdf, png=png, res=res, ...)
-      } else TRUE
+      } else NA
     }
     successes=mapply(pdf2pngwcheck, pdfs, pngs, res=pngres)
-    if(!all(successes)) stop("Failed to convert some pdfs to png!")
+    # we only want to update the pngs we processed
+    # nb which omits NAs
+    pngs=pngs[which(successes)]
+    if(!all(na.omit(successes))) stop("Failed to convert some pdfs to png!")
   }
   
   if(!is.null(outpptx))
