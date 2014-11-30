@@ -1,6 +1,10 @@
 # Functions to help with pptx format files
 
 #' Unzip a PowerPoint pptx to a temporary directory
+#' @param x Path to PowwerPoint pptx file
+#' @param exdir Path to temporary diectory 
+#' @return \code{exdir}
+#' @export
 unzip_pptx<-function(x, exdir=tempfile(pattern = basename(x))) {
   
   unzip(x, exdir = exdir)
@@ -9,10 +13,16 @@ unzip_pptx<-function(x, exdir=tempfile(pattern = basename(x))) {
 
 #' Zip up a temporary directory into a PowerPoint pptx file
 #' 
+#' @param x Path to directory containing expanded PowerPoint data
+#' @param pptx Path to new output pptx
+#' @param action What to do if \code{pptx} points to an existing file
+#' @param files Optional character vector of files to freshen (when
+#'   \code{action='freshen'})
 #' @details Note that the temporary directory itself does not form part of the 
-#'   resultant zip folder, which only includes the 3 folders underneath it
+#'   resultant zip folder, which only includes the 3 folders underneath it 
 #'   (_rels, docProps, ppt)
 #' @importFrom nat.utils abs2rel
+#' @export
 zip_pptx_dir<-function(x, pptx, action=c("freshen", "update", "error"), files=NULL) {
   ext=tools::file_ext(pptx)
   if(ext=="") {
@@ -54,6 +64,18 @@ zip_pptx_dir<-function(x, pptx, action=c("freshen", "update", "error"), files=NU
   pptx
 }
 
+#' Convert all the pdfs in PowerPoint presentation into higher res pngs
+#' 
+#' PowerPoint 2010 et al will convert any pdfs that have been dropped onto 
+#' slides into bitmap pngs. Unfortuantely they do this at 72 dpi, which is 
+#' typically much too low resolution. This function makes higher resolution
+#' versions of the pngs.
+#' @param x A PowerPoint pptx file or an expanded directory.
+#' @param outpptx Path to output pptx file
+#' @param pngres The resolution of the new png file
+#' @param ... Additional arguments passed to \code{zip_pptx_dir}
+#' @export
+#' @seealso \code{\link{zip_pptx_dir}}
 convert_pptx_pdfs<-function(x, outpptx=NULL, pngres=300, ...) {
   if(file_test("-f", x)) {
     inpptx=x
@@ -93,6 +115,10 @@ convert_pptx_pdfs<-function(x, outpptx=NULL, pngres=300, ...) {
     zip_pptx_dir(x, outpptx, files = pngs, ...)
 }
 
+#' Test if file is in pptx format
+#' @inheritParams unzip_pptx
+#' @param Verbose Whether to provide a user message on error.
+#' @export
 is.pptx<-function(x, Verbose=TRUE) {
   if(!file_test("-f", x)) {
     if(Verbose) message(x, " is not a file!")
@@ -106,6 +132,13 @@ is.pptx<-function(x, Verbose=TRUE) {
   ziplist[1,'Name']=="[Content_Types].xml"
 }
 
+#' Convert pdf file to a png using imagemagick convert tool
+#' 
+#' @param pdf Path to input pdf
+#' @param png Path to output png
+#' @param res Output resolution in dpi
+#' @return Logical value indicating success (or failure) of operation
+#' @export
 pdf2png<-function(pdf, png, res=300) {
   cmd=paste("convert -density",res, shQuote(pdf), shQuote(png))
   system(cmd)==0
