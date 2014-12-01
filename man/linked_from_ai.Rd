@@ -20,7 +20,8 @@ List all linked files from given illustrator file (ai or pdf)
 }
 \examples{
 \dontrun{
-lfs=linked_from_ai(system.file('tests','testthat','testdata','lyx','composite_fig.pdf',package='paperutils'))
+lfs=linked_from_ai(system.file('tests/testthat/testdata/lyx/composite_fig.pdf',
+  package='paperutils'))
 stopifnot(length(lfs)==2)
 }
 }
