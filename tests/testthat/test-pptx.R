@@ -18,7 +18,10 @@ test_that("unzip_pptx works", {
   zd=unzip(pptx, list = T)
   expect_true(all(zd[,'Name']%in%ff))
   
-  expect_equal(pngres(file.path(td, 'ppt', 'media', 'image2.png')), 72, tol=1e-3)
+  # don't run in absence of imagemagick
+  if(isTRUE(nzchar(convert()))){
+    expect_equal(pngres(file.path(td, 'ppt', 'media', 'image2.png')), 72, tol=1e-3)
+  }
 })
 
 test_that("zip_pptx_dir works", {
