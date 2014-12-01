@@ -1,3 +1,10 @@
+paperutils 0.2
+==============
+* Support for handling PowerPoint pptx files
+* especially fixing low-res bitmap conversion of pdf images by PowerPoint >=2010
+* fix: gscompress when pdfin and pdfout refer to the same file by different 
+  paths.
+
 paperutils 0.1-5
 ================
 * Add linked_from_sla() to find images linked from Scribus files [ajdm]
