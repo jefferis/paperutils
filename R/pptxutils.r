@@ -82,7 +82,7 @@ zip_pptx_dir<-function(x, pptx, action=c("freshen", "update", "error"), files=NU
 #' @param ... Additional arguments passed to \code{zip_pptx_dir}
 #' @export
 #' @seealso \code{\link{zip_pptx_dir}}
-convert_pptx_pdfs<-function(x, outpptx=NULL, pngres=300, ...) {
+convert_pptx_pdfs<-function(x, outpptx=NULL, pngres=450, ...) {
   if(file_test("-f", x)) {
     inpptx=x
     if(!is.pptx(x)) stop("This doesn't look like a pptx file!")

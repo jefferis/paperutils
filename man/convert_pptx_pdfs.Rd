@@ -3,7 +3,7 @@
 \alias{convert_pptx_pdfs}
 \title{Convert all the pdfs in PowerPoint presentation into higher res pngs}
 \usage{
-convert_pptx_pdfs(x, outpptx = NULL, pngres = 300, ...)
+convert_pptx_pdfs(x, outpptx = NULL, pngres = 450, ...)
 }
 \arguments{
 \item{x}{A PowerPoint pptx file or an expanded directory.}
