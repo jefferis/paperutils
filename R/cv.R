@@ -76,4 +76,5 @@ add_scholar_cites_to_bib<-function(author_id, bibin, bibout=NULL, clean=TRUE) {
     }
   }
   WriteBib(r, bibout)
+  invisible(bibout)
 }
