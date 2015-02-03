@@ -24,12 +24,15 @@ bibtool<-function(infile, ..., cmds=NULL, outfile=NULL) {
 }
 
 # Return absolute path to bibtool binary
-bibtool_path<-function(){
-  path=getOption('bibtool',system('which bibtool',intern=TRUE))
-  if(length(path)==0){
-    stop("Cannot locate bibtool Make sure that it is in your path or set options(bibtool='/path/to/bibtool')")
+bibtool_path<-function(mustWork=TRUE){
+  path=getOption('bibtool', Sys.which('bibtool')[[1]])
+  if(nzchar(path)){
+    if(is.null(getOption('paperutils.bibtool'))) options(paperutils.bibtool=path)
+  } else {
+    if(mustWork)
+      stop("Cannot locate bibtool! Make sure that it is in your path or set",
+           " options(paperutils.bibtool='/path/to/bibtool')")
   }
-  if(is.null(getOption('bibtool'))) options(bibtool=path)
   path
 }
 

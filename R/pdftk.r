@@ -1,12 +1,13 @@
 #' Return absolute path to pdftk binary
 pdftk<-function(){
-  path=getOption('pdftk',system('which pdftk',intern=TRUE))
-  if(length(path)==0){
+  path=getOption('paperutils.pdftk',Sys.which('pdftk')[[1]])
+  if(nchar(path)==0){
     # pdftk is usually here on a mac
     if(!file.exists(path<-"/opt/pdflabs/pdftk/bin/pdftk"))
-      stop("Cannot locate pdftk. Make sure that it is in your path or set options(pdftk='/path/to/pdftk')")
+      stop("Cannot locate pdftk. Make sure that it is in your path or set", 
+           " options(paperutils.pdftk='/path/to/pdftk')")
   }
-  if(is.null(getOption('pdftk'))) options(pdftk=path)
+  if(is.null(getOption('paperutils.pdftk'))) options(paperutils.pdftk=path)
   path
 }
 
