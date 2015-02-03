@@ -33,7 +33,19 @@ bibtool_path<-function(){
   path
 }
 
-# Clean up a bib file produced by BibDesk
+#' Clean up a bibtex file produced by BibDesk
+#' 
+#' Uses the command line \bold{bibtool} program with a custom resource file to 
+#' remove over-long fields that can cause problems for bibtex parsers. These include the annote and b
+#' 
+#' @param bibin Path to input file
+#' @param bibout Path to output file. The defacult value of \code{NULL} will 
+#'   generate a temporary file.
+#' @return A character vector containing the path to the output file or 
+#'   NA_character_ when conversion fails
+#' @export
+#' @examples
+#' rsc_file=system.file("bibtool","bibdesk-clean.rsc", package = 'paperutils')
 bibdesk_clean<-function(bibin, bibout=NULL) {
   if(!inherits(try(bibtool_path()), 'try-error')) {
     # clean up annote field which can kill bibtex parser

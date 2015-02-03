@@ -2,6 +2,7 @@
 
 export(add_scholar_cites_to_bib)
 export(ailinkedfiles)
+export(bibdesk_clean)
 export(bibtool)
 export(convert_pptx_pdfs)
 export(current_lyx_tempfile)
