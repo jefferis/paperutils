@@ -27,7 +27,7 @@ bibtool<-function(infile, ..., cmds=NULL, outfile=NULL) {
 
 # Return absolute path to bibtool binary
 bibtool_path<-function(mustWork=TRUE){
-  path=getOption('bibtool', Sys.which('bibtool')[[1]])
+  path=getOption('paperutils.bibtool', Sys.which('bibtool')[[1]])
   if(nzchar(path)){
     if(is.null(getOption('paperutils.bibtool'))) options(paperutils.bibtool=path)
   } else {
