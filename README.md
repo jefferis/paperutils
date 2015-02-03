@@ -15,7 +15,14 @@ We use a toolchain consisting of
 to prepare our journal articles for submission. This package contains functions that are useful for checking which files are currently linked in the master LyX document (e.g. to ensure they are gitified). It also contains functions to work with the output from pdflatex
 
 ## Installation
-### Dependencies
+### R Dependencies
+The package [scholar](https://github.com/jkeirstead/scholar) is necessary. 
+However currently the CRAN version is 
+misssing the ability to specify a number of publications to return for each
+author, so that only 20 can be returned. Therefore it is recommended to install
+the latest version (see Bleeding Edge below).
+
+### System Dependencies
   * [pdftk](http://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/)
   * ghostscript e.g. from [mactex](http://tug.org/mactex)
   * perl
@@ -28,4 +35,5 @@ Straight from github with Hadley Wickham's [devtools](https://github.com/hadley/
 
     install.packages("devtools")
     library(devtools)
+    install_github("jkeirstead/scholar@develop")
     install_github('paperutils','jefferis')

@@ -13,7 +13,8 @@ Description: Utility functions to work with LyX text files, Illustrator
     Finally has options to read and write bookmarks.
 URL: https://github.com/jefferis/paperutils
 Imports:
-    nat.utils (>= 0.4.1)
+    nat.utils (>= 0.4.1),
+    scholar
 Suggests:
     testthat,
     roxygen2,
