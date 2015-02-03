@@ -52,7 +52,8 @@ bibdesk_clean<-function(bibin, bibout=NULL) {
 #' \dontrun{
 #' add_scholar_cites_to_bib("cuXoCA8AAAAJ", 'mypubs.bib')
 #' }
-add_scholar_cites_to_bib<-function(author_id, bibin, bibout=NULL, clean=TRUE) {
+add_scholar_cites_to_bib<-function(author_id, bibin, bibout=NULL, clean=TRUE,
+                                   Force=FALSE) {
   bibin=path.expand(bibin)
   if(is.null(bibout))
     bibout=file.path(paste0(tools::file_path_sans_ext(bibin), "_scholarcites.bib"))
@@ -62,6 +63,9 @@ add_scholar_cites_to_bib<-function(author_id, bibin, bibout=NULL, clean=TRUE) {
     bibin=tmp
     on.exit(unlink(tmp))
   }
+  
+  update_required=nat.utils::RunCmdForNewerInput(NULL, infiles=bibin, outfiles = bibout, Force=Force)
+  if(!update_required) return(invisible(NA_character_))
   r=ReadBib(bibin)
   df=get_publications(author_id)
   
