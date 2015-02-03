@@ -52,16 +52,16 @@ bibtool_path<-function(mustWork=TRUE){
 #' @examples
 #' rsc_file=system.file("bibtool","bibdesk-clean.rsc", package = 'paperutils')
 bibdesk_clean<-function(bibin, bibout=NULL) {
-  if(!inherits(try(bibtool_path()), 'try-error')) {
+  if(is.null(bibout)) 
+    bibout=tempfile(pattern = basename(bibin), fileext = '.bib')
+  tryCatch({
     # clean up annote field which can kill bibtex parser
-    if(is.null(bibout)) 
-      bibout=tempfile(pattern = basename(bibin), fileext = '.bib')
     rsc_file=system.file("bibtool","bibdesk-clean.rsc", package = 'paperutils', 
                          mustWork = TRUE)
     bibtool(bibin, outfile=bibout, args=paste("-r", shQuote(rsc_file)))
     nat.utils::touch(bibout, reference=bibin)
     bibout
-  } else NA_character_
+  }, error=function(e) {NA_character_})
 }
 
 #' Update citation counts in bib file for references with google scholar ids
