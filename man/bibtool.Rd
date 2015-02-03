@@ -3,7 +3,7 @@
 \alias{bibtool}
 \title{Run bibtool command line utility}
 \usage{
-bibtool(infile, ..., outfile = NULL)
+bibtool(infile, ..., cmds = NULL, outfile = NULL)
 }
 \arguments{
 \item{infile,outfile}{Input and Output files}

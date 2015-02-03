@@ -3,7 +3,18 @@
 \alias{add_scholar_cites_to_bib}
 \title{Fetch citation counts for references with google scholar ids}
 \usage{
-add_scholar_cites_to_bib(author_id, bibin, bibout = NULL, clean = TRUE)
+add_scholar_cites_to_bib(author_id, bibin, bibout = NULL, clean = TRUE,
+  Force = FALSE)
+}
+\arguments{
+\item{author_id}{The google scholar author id}
+
+\item{bibin,bibout}{The input and output bibtex files. \code{bibout} defaults
+to \code{<bibin_stem>_scholarcites.bib}}
+
+\item{clean}{Whether to remove difficult fields / clean up input file}
+
+\item{Force}{Whether to insist on updating the output file (see \code{\link[nat.utils]{RunCmdForNewerInput}})}
 }
 \description{
 Fetch citation counts for references with google scholar ids
@@ -12,5 +23,8 @@ Fetch citation counts for references with google scholar ids
 \dontrun{
 add_scholar_cites_to_bib("cuXoCA8AAAAJ", 'mypubs.bib')
 }
+}
+\seealso{
+\code{\link[nat.utils]{RunCmdForNewerInput}}
 }
 

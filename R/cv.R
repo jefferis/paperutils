@@ -46,12 +46,19 @@ bibdesk_clean<-function(bibin, bibout=NULL) {
 }
 
 #' Fetch citation counts for references with google scholar ids
+#' @param author_id The google scholar author id
+#' @param bibin,bibout The input and output bibtex files. \code{bibout} defaults
+#'   to \code{<bibin_stem>_scholarcites.bib}
+#' @param clean Whether to remove difficult fields / clean up input file
+#' @param Force Whether to insist on updating the output file (see \code{\link[nat.utils]{RunCmdForNewerInput}})
 #' @importFrom scholar get_publications
 #' @import RefManageR
+#' @seealso \code{\link[nat.utils]{RunCmdForNewerInput}}
 #' @examples
 #' \dontrun{
 #' add_scholar_cites_to_bib("cuXoCA8AAAAJ", 'mypubs.bib')
 #' }
+#' @export
 add_scholar_cites_to_bib<-function(author_id, bibin, bibout=NULL, clean=TRUE,
                                    Force=FALSE) {
   bibin=path.expand(bibin)
