@@ -10,10 +10,13 @@
 #' # remove the Annote field
 #' bibtool('in.bib', outfile='in-cleaned.bib', 'delete.field Annote')
 #' }
-bibtool<-function(infile, ..., outfile=NULL) {
+bibtool<-function(infile, ..., cmds=NULL, outfile=NULL) {
   args=c(..., paste("-i", shQuote(path.expand(infile))))
   if(!is.null(outfile)) {
     args=c(args, paste("-o", shQuote(path.expand(outfile))))
+  }
+  if(!is.null(cmds)) {
+    args=c(cmds,"--", shQuote(paste(cmds, collapse=" ")))
   }
   system2(bibtool_path(), args=args)
 }
