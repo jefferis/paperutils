@@ -31,7 +31,21 @@ bibtool_path<-function(){
   path
 }
 
-#' Fetch citation counts for references with google scholar ids 
+# Clean up a bib file produced by BibDesk
+bibdesk_clean<-function(bibin, bibout=NULL) {
+  if(!inherits(try(bibtool_path()), 'try-error')) {
+    # clean up annote field which can kill bibtex parser
+    if(is.null(bibout)) 
+      bibout=tempfile(pattern = basename(bibin), fileext = '.bib')
+    rsc_file=system.file("bibtool","bibdesk-clean.rsc", package = 'paperutils', 
+                         mustWork = TRUE)
+    bibtool(bibin, outfile=bibout, args=paste("-r", shQuote(rsc_file)))
+    nat.utils::touch(bibout, reference=bibin)
+    bibout
+  } else NA_character_
+}
+
+#' Fetch citation counts for references with google scholar ids
 #' @importFrom scholar get_publications
 #' @import RefManageR
 #' @examples
