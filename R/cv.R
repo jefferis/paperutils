@@ -20,7 +20,9 @@ bibtool<-function(infile, ..., cmds=NULL, outfile=NULL) {
   if(!is.null(cmds)) {
     args=c(cmds,"--", shQuote(paste(cmds, collapse=" ")))
   }
-  system2(bibtool_path(), args=args)
+  if(system2(bibtool_path(), args=args)!=0)
+    stop("Error running bibtool!")
+  invisible(TRUE)
 }
 
 # Return absolute path to bibtool binary
