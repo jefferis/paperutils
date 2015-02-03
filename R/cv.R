@@ -27,3 +27,36 @@ bibtool_path<-function(){
   if(is.null(getOption('bibtool'))) options(bibtool=path)
   path
 }
+
+#' Fetch citation counts for references with google scholar ids 
+#' @importFrom scholar get_publications
+#' @import RefManageR
+#' @examples
+#' \dontrun{
+#' add_scholar_cites_to_bib("cuXoCA8AAAAJ", 'mypubs.bib')
+#' }
+add_scholar_cites_to_bib<-function(author_id, bibin, bibout=NULL, clean=TRUE) {
+  if(is.null(bibout))
+    bibout=file.path(paste0(tools::file_path_sans_ext(bibin), "_scholarcites.bib"))
+  
+  if(!inherits(try(bibtool_path()), 'try-error')) {
+    # clean up annote field which can kill bibtex parser
+    tmp=tempfile(pattern = basename(bibin), fileext = '.bib')
+    on.exit(unlink(tmp))
+    bibtool(bibin, outfile=tmp, 'delete.field Annote')
+    bibin=tmp
+  }
+  r=ReadBib(bibin)
+  df=get_publications(author_id)
+  
+  for(i in seq_along(r)){
+    gsid=r[[i]]$googlescholarid
+    if(!is.null(gsid)) {
+      ml=match(r[[i]]$googlescholarid, df$id)
+      if(!is.na(ml)) {
+        r[[i]]$citationnum=df[ml,'cites']
+      }
+    }
+  }
+  WriteBib(r, bibout)
+}
