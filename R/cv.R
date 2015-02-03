@@ -2,6 +2,8 @@
 
 #' Run bibtool command line utility
 #' @param infile,outfile Input and Output files
+#' @param cmds Commands defining operations to be carried out by bibtool on the
+#'   bibtex file.
 #' @param ... Additional character arguments passed straight to bibtool 
 #'   executable
 #' @export

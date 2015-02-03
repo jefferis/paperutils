@@ -10,6 +10,9 @@ bibtool(infile, ..., cmds = NULL, outfile = NULL)
 
 \item{...}{Additional character arguments passed straight to bibtool
 executable}
+
+\item{cmds}{Commands defining operations to be carried out by bibtool on the
+bibtex file.}
 }
 \description{
 Run bibtool command line utility
