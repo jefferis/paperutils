@@ -53,15 +53,14 @@ bibdesk_clean<-function(bibin, bibout=NULL) {
 #' add_scholar_cites_to_bib("cuXoCA8AAAAJ", 'mypubs.bib')
 #' }
 add_scholar_cites_to_bib<-function(author_id, bibin, bibout=NULL, clean=TRUE) {
+  bibin=path.expand(bibin)
   if(is.null(bibout))
     bibout=file.path(paste0(tools::file_path_sans_ext(bibin), "_scholarcites.bib"))
   
-  if(!inherits(try(bibtool_path()), 'try-error')) {
-    # clean up annote field which can kill bibtex parser
-    tmp=tempfile(pattern = basename(bibin), fileext = '.bib')
-    on.exit(unlink(tmp))
-    bibtool(bibin, outfile=tmp, 'delete.field Annote')
+  tmp=bibdesk_clean(bibin)
+  if(!is.na(tmp)){
     bibin=tmp
+    on.exit(unlink(tmp))
   }
   r=ReadBib(bibin)
   df=get_publications(author_id)
