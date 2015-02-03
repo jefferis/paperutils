@@ -59,18 +59,54 @@ bibdesk_clean<-function(bibin, bibout=NULL) {
   } else NA_character_
 }
 
-#' Fetch citation counts for references with google scholar ids
+#' Update citation counts in bib file for references with google scholar ids
+#' 
+#' This is a rather specific function designed for my (Greg's) CV, based on 
+#' initial work by James Manton. The idea is that the bib file (probably 
+#' produced by BibDesk) contains a list of publications with google ids 
+#' specified in the bibtex field \code{googlescholarid}; at present these must 
+#' all have one single google scholar author (denoted by \code{author_id}) as a 
+#' co-author.
+#' 
+#' The function first cleans up the input bib file by removing long, irrelevant 
+#' fields. It then fetches the publication list from google scholar for the 
+#' specified \code{author_id} using \code{\link[scholar]{get_publications}} ( 
+#' which returns a data.frame including the sholar publication ids and citation 
+#' counts). This information is then merge with the bibtex file and new/updated 
+#' citation counts are placed in the bibtex field \code{citationnum}.
+#' 
+#' By default the output is written to a new bibtex file called 
+#' \code{<bibin_stem>_scholarcites.bib}. Note that this process is \emph{lossy} 
+#' since some fields are dropped and therefore it is \bold{not} recommended to 
+#' overwrite the original input file.
+#' 
 #' @param author_id The google scholar author id
 #' @param bibin,bibout The input and output bibtex files. \code{bibout} defaults
 #'   to \code{<bibin_stem>_scholarcites.bib}
 #' @param clean Whether to remove difficult fields / clean up input file
-#' @param Force Whether to insist on updating the output file (see \code{\link[nat.utils]{RunCmdForNewerInput}})
+#' @param Force Whether to insist on updating the output file (see 
+#'   \code{\link[nat.utils]{RunCmdForNewerInput}})
+#'   
 #' @importFrom scholar get_publications
 #' @import RefManageR
-#' @seealso \code{\link[nat.utils]{RunCmdForNewerInput}}
+#'   
+#' @seealso \code{\link[nat.utils]{RunCmdForNewerInput}}, 
+#'   \code{\link[scholar]{get_publications}}
+#'   
 #' @examples
 #' \dontrun{
 #' add_scholar_cites_to_bib("cuXoCA8AAAAJ", 'mypubs.bib')
+#' 
+#' ## a sample rmarkdown chunk:
+#' # nb the block should have options like:
+#' # ```r bibstuff, echo=FALSE, results="hide", message=FALSE, warning=FALSE```
+#' # to avoid potentially distracting messages.
+#' library(paperutils)
+#' add_scholar_cites_to_bib("cuXoCA8AAAAJ", "~/cv/JefferisPublications.bib")
+#' # produces "~/cv/JefferisPublications_scholarcites.bib"
+#' 
+#' library(scholar)
+#' gs_prof=get_profile("cuXoCA8AAAAJ")
 #' }
 #' @export
 add_scholar_cites_to_bib<-function(author_id, bibin, bibout=NULL, clean=TRUE,
