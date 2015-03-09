@@ -34,15 +34,16 @@ numpages<-function(pdf){
 #'   bookmarks to the output pdf.
 #' @author jefferis
 #' @export
+#' @aliases extractpdf
 #' @seealso \code{\link{gscompress}}
 #' @examples
 #' \dontrun{
 #' aux='/path/to/myfile.aux'
 #' pdffile='/path/to/myfile.pdf'
 #' figurepages=findfigs(aux)
-#' extractpdf(pdffile,figurepages,prefix='LastAuthor_',gscomp=TRUE)
+#' extract_pdf(pdffile,figurepages,prefix='LastAuthor_',gscomp=TRUE)
 #' }
-extractpdf<-function(pdfin,pages,pdfout,prefix=NULL,DryRun=F,gscomp=FALSE,bookmarks=NULL){
+extract_pdf<-function(pdfin,pages,pdfout,prefix=NULL,DryRun=F,gscomp=FALSE,bookmarks=NULL){
   if(length(pages)==0) return(NULL)
   if(missing(pdfout)) {
     # outfiles should be names of pages vector
@@ -54,7 +55,7 @@ extractpdf<-function(pdfin,pages,pdfout,prefix=NULL,DryRun=F,gscomp=FALSE,bookma
     if(length(pdfout)!=length(pages)) stop("must supply one outfile for each page")
     names(pages)=pdfout
     for(n in pdfout){
-      extractpdf(pdfin,unlist(pages[n]),n,DryRun=DryRun,gscomp=gscomp)
+      extract_pdf(pdfin,unlist(pages[n]),n,DryRun=DryRun,gscomp=gscomp)
     }
     return(length(pdfout))
   }
@@ -73,3 +74,8 @@ extractpdf<-function(pdfin,pages,pdfout,prefix=NULL,DryRun=F,gscomp=FALSE,bookma
     }
   }
 }
+
+#' @export
+#' @name extractpdf
+#' @rdname extract_pdf
+extractpdf=extract_pdf
