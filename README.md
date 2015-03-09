@@ -33,7 +33,8 @@ the latest version (see Bleeding Edge below).
 ### Bleeding Edge
 Straight from github with Hadley Wickham's [devtools](https://github.com/hadley/devtools) package:
 
-    install.packages("devtools")
-    library(devtools)
-    install_github("jkeirstead/scholar@develop")
-    install_github('paperutils','jefferis')
+```r
+if(!require("devtools")) install.packages("devtools")
+devtools::install_github(c("jkeirstead/scholar@develop", "jefferis/paperutils"))
+```
+
