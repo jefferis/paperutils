@@ -21,4 +21,8 @@ Look in Tools->Preferences->File Handling->File Formats->Short Name
 to see which parameter (which differs from the format name in the
 File->Export menu) should be passed as format.
 }
+\seealso{
+Other lyx: \code{\link{current_lyx_tempfile}};
+  \code{\link{lyxhtml2html}}
+}
 

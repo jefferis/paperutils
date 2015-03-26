@@ -75,6 +75,7 @@ current_lyx_tempfile<-function(ftype=c('pdf','aux','dir','tex','lof'),lyxfile=NU
 #' to see which parameter (which differs from the format name in the
 #' File->Export menu) should be passed as format.
 #' @export
+#' @family lyx
 lyxexport <-function(x, outfile=NULL, format="xhtml") {
   if(is.null(outfile)) {
     outfile=paste(tools::file_path_sans_ext(x),sep=".", format)
@@ -98,4 +99,32 @@ lyxbin<-function() {
 # Call lyx command line tool
 lyx<-function(args, ...) {
   system2(lyxbin(), args, ...)
+}
+
+
+#' Convert a LyXHTML file to an html file that can be opened by Word
+#' 
+#' LyXHTML is currently (LyX 2.1 series) the highestq quality html export 
+#' available by default. However, it cannot be opened by word immediately
+#' because it interposes a small xml type header before the html content. This
+#' function removes that header and renames the file with a .html extension by
+#' default.
+#' @param infile path to xhtml file
+#' @param outfile path to output html file (defaults to <infilestem>.<html>)
+#' @family lyx
+#' @export
+#' @importFrom XML xmlParse saveXML xmlChildren
+#' @examples 
+#' \dontrun{
+#' lyxfile=system.file('tests/testthat/testdata/lyx/test.lyx', package='paperutils')
+#' lyxhtml=tempfile(pattern = basename(lyxfile), fileext = '.xhtml')
+#' lyxexport(lyxfile, outfile=lyxhtml)
+#' lyxhtml2html(lyxhtml)
+#' }
+lyxhtml2html<-function(infile, outfile=NULL){
+  if(is.null(outfile)) 
+    outfile=paste0(tools::file_path_sans_ext(infile), ".html")
+  x=XML::xmlParse(infile)
+  # cut off the header 
+  saveXML(xmlChildren(x)[[2]], file = outfile)
 }

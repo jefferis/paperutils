@@ -37,4 +37,8 @@ current_lyx_tempfile(lyxfile='main.lyx')
 \author{
 jefferis
 }
+\seealso{
+Other lyx: \code{\link{lyxexport}};
+  \code{\link{lyxhtml2html}}
+}
 

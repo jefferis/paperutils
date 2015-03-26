@@ -15,7 +15,8 @@ URL: https://github.com/jefferis/paperutils
 Imports:
     nat.utils (>= 0.4.1),
     scholar,
-    RefManageR
+    RefManageR,
+    XML
 Suggests:
     testthat,
     roxygen2,
