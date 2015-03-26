@@ -41,7 +41,8 @@ bibtool_path<-function(mustWork=TRUE){
 #' Clean up a bibtex file produced by BibDesk
 #' 
 #' Uses the command line \bold{bibtool} program with a custom resource file to 
-#' remove over-long fields that can cause problems for bibtex parsers. These include the annote and b
+#' remove over-long fields that can cause problems for bibtex parsers. These
+#' include the \code{annote} and \code{bdsk-url-*} and \code{bdsk-file} fields.
 #' 
 #' @param bibin Path to input file
 #' @param bibout Path to output file. The defacult value of \code{NULL} will 

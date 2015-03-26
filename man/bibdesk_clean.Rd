@@ -18,7 +18,8 @@ A character vector containing the path to the output file or
 }
 \description{
 Uses the command line \bold{bibtool} program with a custom resource file to
-remove over-long fields that can cause problems for bibtex parsers. These include the annote and b
+remove over-long fields that can cause problems for bibtex parsers. These
+include the \code{annote} and \code{bdsk-url-*} and \code{bdsk-file} fields.
 }
 \examples{
 rsc_file=system.file("bibtool","bibdesk-clean.rsc", package = 'paperutils')
