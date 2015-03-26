@@ -65,3 +65,37 @@ current_lyx_tempfile<-function(ftype=c('pdf','aux','dir','tex','lof'),lyxfile=NU
   if(!length(res) || !file.exists(res)) stop("Unable to find requested lyx temp file. Please preview in LyX")
   res
 }
+
+#' Export a LyX file to another format (by default xhtml)
+#' 
+#' @param x The input file
+#' @param outfile Path to output file (defaults to <infilestem>.<format>)
+#' @param format The LyX shortname for the format (see details)
+#' @details Look in Tools->Preferences->File Handling->File Formats->Short Name 
+#' to see which parameter (which differs from the format name in the
+#' File->Export menu) should be passed as format.
+#' @export
+lyxexport <-function(x, outfile=NULL, format="xhtml") {
+  if(is.null(outfile)) {
+    outfile=paste(tools::file_path_sans_ext(x),sep=".", format)
+  }
+  rval=lyx(c("-batch","--export-to", format, shQuote(outfile), shQuote(x)))
+  if(rval!=0) stop("error running lyxexport")
+  invisible(outfile)
+}
+
+# Find lyx binary
+lyxbin<-function() {
+  lyx=if(Sys.info()[['sysname']] == "Darwin") {
+    "/Applications/LyX.app/Contents/MacOS/lyx"
+  } else {
+    Sys.which('lyx')[[1]]
+  }
+  if(!nzchar(lyx) || !file.exists(lyx)) stop("Can't find lyx binary!")
+  lyx
+}
+
+# Call lyx command line tool
+lyx<-function(args, ...) {
+  system2(lyxbin(), args, ...)
+}
