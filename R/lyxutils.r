@@ -128,3 +128,27 @@ lyxhtml2html<-function(infile, outfile=NULL){
   # cut off the header 
   saveXML(xmlChildren(x)[[2]], file = outfile)
 }
+
+#' List the bibtex citekeys for a LyX document
+#' 
+#' Uses latex \code{.aux} file to extract citation keys
+#' 
+#' @details The required input is not the LyX file itself, but rather the 
+#'   auxfile produced by a latex/bibtex run (note this is also produced by 
+#'   biblatex). When \code{auxfile=NULL} the \code{\link{current_lyx_tempfile}} 
+#'   is used to determine the appropriate auxfile.
+#'   
+#' @param auxfile Path to a latex aux file (see details for default behaviour)
+#' @export
+#' @family lyx
+#' @return A character vector of citation keys in the order in which they are
+#'   cited in the LyX document.
+lyx_citekeys<-function(auxfile=NULL) {
+  if(is.null(auxfile)) {
+    auxfile=paste0(tools::file_path_sans_ext(current_lyx_tempfile()), ".aux")
+  }
+  ll=readLines(auxfile)
+  citel=ll[grepl('@cite{', ll, fixed = T)]
+  citekeys=sub(".*cite\\{(.*)\\}", "\\1", citel)
+  citekeys
+}

@@ -23,6 +23,6 @@ File->Export menu) should be passed as format.
 }
 \seealso{
 Other lyx: \code{\link{current_lyx_tempfile}};
-  \code{\link{lyxhtml2html}}
+  \code{\link{lyx_citekeys}}; \code{\link{lyxhtml2html}}
 }
 
