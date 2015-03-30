@@ -26,4 +26,5 @@ remove_biber_cache<-function() {
 biber<-function(mustWork=TRUE){
   biber=Sys.which("biber")[[1]]
   if(!nzchar(biber)) stop("Cannot find biber in path!")
+  biber
 }
