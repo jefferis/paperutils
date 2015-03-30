@@ -12,6 +12,7 @@
 #' for discussion.
 #' @return \code{biber_cache} returns a character vector 
 #' @family bib
+#' @export
 biber_cache<-function(){
   system2(biber(), "--cache", stdout = TRUE)
 }
@@ -19,6 +20,7 @@ biber_cache<-function(){
 #' @rdname biber_cache
 #' @description \code{remove_biber_cache} deletes cache to fix bib problems.
 #' @return \code{remove_biber_cache} returns a logical indicating success.
+#' @export
 remove_biber_cache<-function() {
   unlink(biber_cache(), recursive = TRUE)
 }
