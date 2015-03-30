@@ -140,7 +140,7 @@ lyxhtml2html<-function(infile, outfile=NULL){
 #'   
 #' @param auxfile Path to a latex aux file (see details for default behaviour)
 #' @export
-#' @family lyx
+#' @family lyx, bib
 #' @return A character vector of citation keys in the order in which they are
 #'   cited in the LyX document.
 lyx_citekeys<-function(auxfile=NULL) {

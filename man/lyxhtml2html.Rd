@@ -28,6 +28,6 @@ lyxhtml2html(lyxhtml)
 }
 \seealso{
 Other lyx: \code{\link{current_lyx_tempfile}};
-  \code{\link{lyx_citekeys}}; \code{\link{lyxexport}}
+  \code{\link{lyxexport}}
 }
 

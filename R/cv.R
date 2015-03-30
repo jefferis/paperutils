@@ -50,6 +50,7 @@ bibtool_path<-function(mustWork=TRUE){
 #' @return A character vector containing the path to the output file or 
 #'   NA_character_ when conversion fails
 #' @export
+#' @family bib
 #' @examples
 #' rsc_file=system.file("bibtool","bibdesk-clean.rsc", package = 'paperutils')
 bibdesk_clean<-function(bibin, bibout=NULL) {

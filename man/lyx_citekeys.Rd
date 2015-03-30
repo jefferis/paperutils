@@ -22,8 +22,4 @@ The required input is not the LyX file itself, but rather the
   biblatex). When \code{auxfile=NULL} the \code{\link{current_lyx_tempfile}}
   is used to determine the appropriate auxfile.
 }
-\seealso{
-Other lyx: \code{\link{current_lyx_tempfile}};
-  \code{\link{lyxexport}}; \code{\link{lyxhtml2html}}
-}
 
