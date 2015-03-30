@@ -28,6 +28,7 @@ see
 for discussion.
 }
 \seealso{
-Other bib: \code{\link{bibdesk_clean}}
+Other bib: \code{\link{bibdesk_clean}};
+  \code{\link{lyx_citekeys}}
 }
 

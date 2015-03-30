@@ -26,6 +26,7 @@ rsc_file=system.file("bibtool","bibdesk-clean.rsc", package = 'paperutils')
 }
 \seealso{
 Other bib: \code{\link{biber_cache}},
-  \code{\link{remove_biber_cache}}
+  \code{\link{remove_biber_cache}};
+  \code{\link{lyx_citekeys}}
 }
 
