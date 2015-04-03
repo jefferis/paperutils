@@ -12,7 +12,7 @@ remove_biber_cache()
 \value{
 \code{biber_cache} returns a character vector
 
-\code{remove_biber_cache} returns a logical indicating success.
+\code{remove_biber_cache} returns 0 for success, 1 for failure, invisibly.
 }
 \description{
 \code{biber_cache} returns the path to the cache
@@ -28,6 +28,8 @@ see
 for discussion.
 }
 \seealso{
+\code{\link{unlink}}
+
 Other bib: \code{\link{bibdesk_clean}};
   \code{\link{lyx_citekeys}}
 }

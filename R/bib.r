@@ -19,8 +19,9 @@ biber_cache<-function(){
 
 #' @rdname biber_cache
 #' @description \code{remove_biber_cache} deletes cache to fix bib problems.
-#' @return \code{remove_biber_cache} returns a logical indicating success.
+#' @return \code{remove_biber_cache} returns 0 for success, 1 for failure, invisibly.
 #' @export
+#' @seealso \code{\link{unlink}}
 remove_biber_cache<-function() {
   unlink(biber_cache(), recursive = TRUE)
 }
