@@ -138,6 +138,10 @@ lyxhtml2html<-function(infile, outfile=NULL){
 #'   biblatex). When \code{auxfile=NULL} the \code{\link{current_lyx_tempfile}} 
 #'   is used to determine the appropriate auxfile.
 #'   
+#'   auxfiles do seem to have a variety of different formats for recording the
+#'   citekey list - this function has been tested for files processed using 
+#'   \code{natbib} + \code{bibdesk}.
+#'   
 #' @param auxfile Path to a latex aux file (see details for default behaviour)
 #' @export
 #' @family lyx
@@ -149,7 +153,7 @@ lyx_citekeys<-function(auxfile=NULL) {
     auxfile=paste0(tools::file_path_sans_ext(current_lyx_tempfile()), ".aux")
   }
   ll=readLines(auxfile)
-  citel=ll[grepl('@cite{', ll, fixed = T)]
-  citekeys=sub(".*cite\\{(.*)\\}", "\\1", citel)
+  citel=ll[grepl('cite{', ll, fixed = T)]
+  citekeys=sub(".*cite\\{(.*?)\\}.*", "\\1", citel)
   citekeys
 }

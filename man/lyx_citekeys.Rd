@@ -21,6 +21,10 @@ The required input is not the LyX file itself, but rather the
   auxfile produced by a latex/bibtex run (note this is also produced by
   biblatex). When \code{auxfile=NULL} the \code{\link{current_lyx_tempfile}}
   is used to determine the appropriate auxfile.
+
+  auxfiles do seem to have a variety of different formats for recording the
+  citekey list - this function has been tested for files processed using
+  \code{natbib} + \code{bibdesk}.
 }
 \seealso{
 Other bib: \code{\link{bibdesk_clean}};

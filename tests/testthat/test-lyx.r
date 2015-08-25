@@ -33,3 +33,9 @@ test_that("Find files linked from LyX file", {
   expect_equal(linked_figs_abs, baseline_abs,
               info='Correct absolute path to linked files')
 })
+
+test_that("extract citation keys from aux file",{
+  expect_is(cites<-lyx_citekeys(auxfile = "testdata/test.aux"), "character")
+  expect_equal(length(cites), 20L)
+  expect_equal(cites[1], "Suh:2004aa")
+})
