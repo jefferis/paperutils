@@ -1,3 +1,12 @@
+paperutils 0.3
+==============
+* add add_scholar_cites_to_bib function to add citation counts to a bibtex file
+* add lyx_citekeys to find citations in a LyX document
+* add pdftotext command
+* add bibtool command
+* add bibdesk_clean command
+* convert_pptx_pdfs defaults to 450 dpi
+
 paperutils 0.2
 ==============
 * Support for handling PowerPoint pptx files
