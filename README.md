@@ -35,6 +35,6 @@ Straight from github with Hadley Wickham's [devtools](https://github.com/hadley/
 
 ```r
 if(!require("devtools")) install.packages("devtools")
-devtools::install_github(c("jkeirstead/scholar@develop", "jefferis/paperutils"))
+devtools::install_github(c("jkeirstead/scholar", "jefferis/paperutils"))
 ```
 
