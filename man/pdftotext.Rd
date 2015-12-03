@@ -5,7 +5,7 @@
 \title{Invoke pdftotext tool to extrat text from a PDF document}
 \usage{
 pdftotext(x, outfile = NULL, first = NULL, last = NULL, layout = FALSE,
-  table = FALSE, raw = FALSE)
+  table = FALSE, raw = FALSE, ...)
 }
 \arguments{
 \item{x}{Path to pdf}

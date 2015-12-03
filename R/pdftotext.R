@@ -23,7 +23,8 @@ pdftotextbin<-function(){
 #' @return the return value of the system call or, if outfile has the signalling
 #'   value of \code{FALSE}, the contents of the text file as a character vector.
 #' @export
-pdftotext<-function(x, outfile=NULL, first=NULL, last=NULL, layout=FALSE, table=FALSE, raw=FALSE) {
+pdftotext<-function(x, outfile=NULL, first=NULL, last=NULL, layout=FALSE, 
+                    table=FALSE, raw=FALSE, ...) {
   cmd=paste(pdftotextbin(), 
             ifelse(layout, "-layout",""),
             ifelse(raw, "-raw",""),
