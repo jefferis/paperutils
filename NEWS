@@ -6,6 +6,7 @@ paperutils 0.3
 * add bibtool command
 * add bibdesk_clean command
 * convert_pptx_pdfs defaults to 450 dpi
+* extractpdf->extract_pdf
 
 paperutils 0.2
 ==============
