@@ -136,7 +136,7 @@ add_scholar_cites_to_bib<-function(author_id, bibin, bibout=NULL, clean=TRUE,
   for(i in seq_along(r)){
     gsid=r[[i]]$googlescholarid
     if(!is.null(gsid)) {
-      ml=match(r[[i]]$googlescholarid, df$id)
+      ml=match(r[[i]]$googlescholarid, df$cid)
       if(!is.na(ml)) {
         r[[i]]$citationnum=df[ml,'cites']
       }
