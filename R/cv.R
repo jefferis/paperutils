@@ -133,14 +133,30 @@ add_scholar_cites_to_bib<-function(author_id, bibin, bibout=NULL, clean=TRUE,
   r=ReadBib(bibin)
   df=get_publications(author_id)
   
+  missing_gsids=character()
+  nonmatching_gsids=character()
   for(i in seq_along(r)){
     gsid=r[[i]]$googlescholarid
     if(!is.null(gsid)) {
       ml=match(r[[i]]$googlescholarid, df$cid)
       if(!is.na(ml)) {
         r[[i]]$citationnum=df[ml,'cites']
+      } else {
+        nonmatching_gsids=c(nonmatching_gsids, r[[i]]$key)
       }
+    } else {
+      missing_gsids<-c(missing_gsids, r[[i]]$key)
     }
+  }
+  if(length(missing_gsids)) {
+    warning("unable to find determine citation count for ",length(missing_gsids),
+            " publications without google scholar ids.\n", 
+            paste(missing_gsids, collapse = ","))
+  }
+  if(length(nonmatching_gsids)) {
+    warning("unable to find citation count for ",length(nonmatching_gsids),
+            " publications with google scholar ids that could not be matched.\n", 
+            paste(nonmatching_gsids, collapse = ","))
   }
   WriteBib(r, bibout)
   invisible(bibout)
