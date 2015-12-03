@@ -5,7 +5,7 @@
 \title{Update citation counts in bib file for references with google scholar ids}
 \usage{
 add_scholar_cites_to_bib(author_id, bibin, bibout = NULL, clean = TRUE,
-  Force = FALSE)
+  Force = TRUE)
 }
 \arguments{
 \item{author_id}{The google scholar author id}

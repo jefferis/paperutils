@@ -117,7 +117,7 @@ bibdesk_clean<-function(bibin, bibout=NULL) {
 #' }
 #' @export
 add_scholar_cites_to_bib<-function(author_id, bibin, bibout=NULL, clean=TRUE,
-                                   Force=FALSE) {
+                                   Force=TRUE) {
   bibin=path.expand(bibin)
   if(is.null(bibout))
     bibout=file.path(paste0(tools::file_path_sans_ext(bibin), "_scholarcites.bib"))
