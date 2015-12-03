@@ -14,7 +14,7 @@ Description: Utility functions to work with LyX text files, Illustrator
 URL: https://github.com/jefferis/paperutils
 Imports:
     nat.utils (>= 0.4.1),
-    scholar,
+    scholar (>= 0.1.4),
     RefManageR,
     XML
 Suggests:
