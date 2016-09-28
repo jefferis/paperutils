@@ -12,7 +12,8 @@ insert_bookmarks(pdfin, bookmarks, pdfout = pdfin)
 \arguments{
 \item{pdfin, pdfout}{Input and Output pdfs}
 
-\item{bookmarks}{Path to a bookmarks file in pdf format}
+\item{bookmarks}{Path to a bookmarks PDF file in pdftk format or a character
+vector of length >1 containing bookmark text.}
 }
 \value{
 location of pdftk bookmark file

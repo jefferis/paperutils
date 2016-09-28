@@ -10,7 +10,8 @@ extract_bookmarks<-function(pdfin,bookmarks){
 
 #' Insert and Extract bookmarks from a pdf
 #' @param pdfin,pdfout Input and Output pdfs
-#' @param bookmarks Path to a bookmarks file in pdf format
+#' @param bookmarks Path to a bookmarks PDF file in pdftk format or a character
+#'   vector of length >1 containing bookmark text.
 #' @return location of modified pdf
 #' @author jefferis
 #' @export
@@ -21,7 +22,15 @@ insert_bookmarks<-function(pdfin,bookmarks,pdfout=pdfin){
     pdfout=tempfile(basename(pdfout),tmpdir=dirname(pdfout),fileext='.pdf')
     on.exit(file.rename(pdfout,real_out))
   }
-  cmd=sprintf("%s %s  update_info %s output %s",pdftk(),shQuote(pdfin),
+  if(length(bookmarks)>1) {
+    # looks like character vector of bookmarks in memory
+    tf=tempfile(fileext = '.info')
+    tc=file(tf, encoding = 'UTF-8')
+    writeLines(bookmarks, tc)
+    close(tc)
+    on.exit(unlink(tf), add = TRUE)
+    bookmarks=tf
+  }
   cmd=sprintf("%s %s  update_info_utf8 %s output %s",pdftk(),shQuote(pdfin),
       shQuote(bookmarks),shQuote(pdfout))
   RunCmdForNewerInput(cmd,c(pdfin,bookmarks),pdfout)
