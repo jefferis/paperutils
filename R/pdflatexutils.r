@@ -7,6 +7,7 @@
 #' @return Named integer page number sequence for figures/tables
 #' @author jefferis
 #' @export
+#' @importFrom stats na.omit
 find_figs<-function(auxfile,ftype=c("Fig","Table")){
   ftype=match.arg(ftype)
   auxentry=ifelse(ftype=="Fig","lof","lot")
