@@ -3,7 +3,7 @@
 #' @export
 extract_bookmarks<-function(pdfin,bookmarks){
   if(missing(bookmarks)) bookmarks=sub("\\.pdf$",".info",basename(pdfin))
-  cmd=sprintf("%s %s  dump_data > %s",pdftk(),shQuote(pdfin),shQuote(bookmarks))
+  cmd=sprintf("%s %s  dump_data_utf8 > %s",pdftk(),shQuote(pdfin),shQuote(bookmarks))
   RunCmdForNewerInput(cmd,pdfin,bookmarks)
   bookmarks
 }
@@ -22,6 +22,7 @@ insert_bookmarks<-function(pdfin,bookmarks,pdfout=pdfin){
     on.exit(file.rename(pdfout,real_out))
   }
   cmd=sprintf("%s %s  update_info %s output %s",pdftk(),shQuote(pdfin),
+  cmd=sprintf("%s %s  update_info_utf8 %s output %s",pdftk(),shQuote(pdfin),
       shQuote(bookmarks),shQuote(pdfout))
   RunCmdForNewerInput(cmd,c(pdfin,bookmarks),pdfout)
   pdfout
