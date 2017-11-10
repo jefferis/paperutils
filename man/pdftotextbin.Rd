@@ -9,4 +9,3 @@ pdftotextbin()
 \description{
 Return absolute path to pdftotext binary
 }
-

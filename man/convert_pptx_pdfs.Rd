@@ -31,4 +31,3 @@ This function depends on having the
 \seealso{
 \code{\link{zip_pptx_dir}}
 }
-

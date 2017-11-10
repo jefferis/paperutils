@@ -24,4 +24,3 @@ Run bibtool command line utility
 bibtool('in.bib', outfile='in-cleaned.bib', 'delete.field Annote')
 }
 }
-

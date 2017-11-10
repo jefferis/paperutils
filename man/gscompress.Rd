@@ -35,4 +35,3 @@ gscompress('statistics.pdf',gsopts='-dSubsetFonts=true -dEmbedAllFonts=true')
 \author{
 jefferis
 }
-

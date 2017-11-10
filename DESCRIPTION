@@ -21,4 +21,4 @@ Suggests:
     testthat,
     roxygen2,
 SystemRequirements: pdftk, ghostscript, perl
-RoxygenNote: 5.0.1
+RoxygenNote: 6.0.1

@@ -20,4 +20,3 @@ Find location of figures or tables using latex auxfile
 \author{
 jefferis
 }
-

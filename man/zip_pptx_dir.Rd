@@ -25,4 +25,3 @@ Note that the temporary directory itself does not form part of the
   resultant zip folder, which only includes the 3 folders underneath it 
   (_rels, docProps, ppt)
 }
-

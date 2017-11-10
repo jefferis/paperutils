@@ -26,12 +26,11 @@ lfs=linked_from_ai(system.file('tests/testthat/testdata/lyx/composite_fig.pdf',
 stopifnot(length(lfs)==2)
 }
 }
-\author{
-jefferis
-}
 \seealso{
 ailinkedfiles
 
 Other linked_from: \code{\link{ailinkedfiles}}
 }
-
+\author{
+jefferis
+}

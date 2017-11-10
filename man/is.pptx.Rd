@@ -14,4 +14,3 @@ is.pptx(x, Verbose = TRUE)
 \description{
 Test if file is in pptx format
 }
-

@@ -59,4 +59,3 @@ gs_prof=get_profile("cuXoCA8AAAAJ")
 \code{\link[nat.utils]{RunCmdForNewerInput}}, 
   \code{\link[scholar]{get_publications}}
 }
-

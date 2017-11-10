@@ -31,4 +31,3 @@ Invoke pdftotext tool to extrat text from a PDF document
 \details{
 Run pdftotext -help for details
 }
-

@@ -23,4 +23,3 @@ explicit parameter lastRegularPage can be passed.
 \author{
 jefferis
 }
-

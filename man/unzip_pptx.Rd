@@ -17,4 +17,3 @@ unzip_pptx(x, exdir = tempfile(pattern = basename(x)))
 \description{
 Unzip a PowerPoint pptx to a temporary directory
 }
-

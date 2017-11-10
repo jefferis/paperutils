@@ -32,8 +32,8 @@ paperutils: PDF manipulation utilities (wrapping pdftk and ghostscript)
   
   }
 }
+
 \seealso{
 \code{\link{convert_pptx_pdfs}}, \code{\link{bibdesk_clean}},
   \code{\link{extract_pdf}}
 }
-

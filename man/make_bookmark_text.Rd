@@ -22,10 +22,9 @@ Make a correctly formatted block of text defining a bookmark in pdftk format
 \examples{
 make_bookmark_text('Figure 1',3,20)
 }
-\author{
-jefferis
-}
 \seealso{
 \code{\link{extract_bookmarks}}
 }
-
+\author{
+jefferis
+}

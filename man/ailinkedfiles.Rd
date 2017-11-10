@@ -16,10 +16,9 @@ Character vector of paths to linked files
 This is much slower than perl version for large files
 This appears to be due to speed of readLines
 }
-\author{
-jefferis
-}
 \seealso{
 Other linked_from: \code{\link{linked_from_ai}}
 }
-
+\author{
+jefferis
+}

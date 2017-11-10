@@ -15,4 +15,3 @@ Character vector of paths to linked files.
 \description{
 List all linked files from given Scribus file (sla)
 }
-

@@ -27,10 +27,9 @@ The required input is not the LyX file itself, but rather the
   \code{natbib} + \code{bibdesk}.
 }
 \seealso{
-Other bib: \code{\link{bibdesk_clean}},
-  \code{\link{biber_cache}}
-
 Other lyx: \code{\link{current_lyx_tempfile}},
   \code{\link{lyxexport}}, \code{\link{lyxhtml2html}}
-}
 
+Other bib: \code{\link{bibdesk_clean}},
+  \code{\link{biber_cache}}
+}

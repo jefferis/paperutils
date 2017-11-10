@@ -3,6 +3,7 @@
 \name{extract_pdf}
 \alias{extract_pdf}
 \alias{extractpdf}
+\alias{extractpdf}
 \title{Extract pages from a pdf to new pdf(s)}
 \usage{
 extract_pdf(pdfin, pages, pdfout, prefix = NULL, DryRun = F,
@@ -36,10 +37,9 @@ figurepages=findfigs(aux)
 extract_pdf(pdffile,figurepages,prefix='LastAuthor_',gscomp=TRUE)
 }
 }
-\author{
-jefferis
-}
 \seealso{
 \code{\link{gscompress}}
 }
-
+\author{
+jefferis
+}

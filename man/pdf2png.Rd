@@ -19,4 +19,3 @@ Logical value indicating success (or failure) of operation
 \description{
 Convert pdf file to a png using imagemagick convert tool
 }
-

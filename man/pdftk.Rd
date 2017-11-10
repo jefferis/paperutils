@@ -9,4 +9,3 @@ pdftk()
 \description{
 Return absolute path to pdftk binary
 }
-

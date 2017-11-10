@@ -23,10 +23,9 @@ location of modified pdf
 \description{
 Insert and Extract bookmarks from a pdf
 }
-\author{
-jefferis
-}
 \seealso{
 \code{\link{make_bookmark_text}}
 }
-
+\author{
+jefferis
+}

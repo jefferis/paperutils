@@ -15,4 +15,3 @@ numeric vector giving resolution in dots per inch
 \description{
 Return (horizontal) resolution in dots per inch of a png file
 }
-

@@ -22,4 +22,3 @@ Convert linked files in Scribus file from absolute to relative paths
 when \code{writeout=TRUE} the existing file is fixed and
   overwritten.
 }
-

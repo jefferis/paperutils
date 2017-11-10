@@ -34,11 +34,10 @@ current_lyx_tempfile('pdf')
 current_lyx_tempfile(lyxfile='main.lyx')
 }
 }
-\author{
-jefferis
-}
 \seealso{
 Other lyx: \code{\link{lyx_citekeys}},
   \code{\link{lyxexport}}, \code{\link{lyxhtml2html}}
 }
-
+\author{
+jefferis
+}
