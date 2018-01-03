@@ -44,3 +44,25 @@ read_bib_comments <- function(x) {
   names(res)=nn
   res
 }
+
+
+#' Read a BibDesk bib file after cleaning it to remove problem fields
+#'
+#' @param x Path to a BibDesk bib file
+#'
+#' @return See \code{\link[RefManageR]{ReadBib}}
+#' @export
+#'
+#' @examples
+#' \dontrun{
+#' r=read_bibdesk_bib("~/Greg/ProfessionalAdmin/cv_lyx/JefferisPublications.bib")
+#' citekeys=unname(names(r))
+#' citekeys
+#' }
+#' @importFrom RefManageR ReadBib
+read_bibdesk_bib <- function(x) {
+  tf=tempfile(fileext = '.bib')
+  on.exit(unlink(tf))
+  bibdesk_clean(x, bibout = tf)
+  ReadBib(tf)
+}
