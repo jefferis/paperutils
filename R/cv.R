@@ -54,6 +54,7 @@ bibtool_path<-function(mustWork=TRUE){
 #' @examples
 #' rsc_file=system.file("bibtool","bibdesk-clean.rsc", package = 'paperutils')
 bibdesk_clean<-function(bibin, bibout=NULL) {
+  bibin=path.expand(bibin)
   if(is.null(bibout)) 
     bibout=tempfile(pattern = basename(bibin), fileext = '.bib')
   tryCatch({
