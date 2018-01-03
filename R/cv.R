@@ -67,43 +67,48 @@ bibdesk_clean<-function(bibin, bibout=NULL) {
 }
 
 #' Update citation counts in bib file for references with google scholar ids
-#' 
-#' This is a rather specific function designed for my (Greg's) CV, based on 
-#' initial work by James Manton. The idea is that the bib file (probably 
-#' produced by BibDesk) contains a list of publications with google ids 
-#' specified in the bibtex field \code{googlescholarid}; at present these must 
-#' all have one single google scholar author (denoted by \code{author_id}) as a 
+#'
+#' This is a rather specific function designed for my (Greg's) CV, based on
+#' initial work by James Manton. The idea is that the bib file (probably
+#' produced by BibDesk) contains a list of publications with google ids
+#' specified in the bibtex field \code{googlescholarid}; at present these must
+#' all have one single google scholar author (denoted by \code{author_id}) as a
 #' co-author.
-#' 
-#' The function first cleans up the input bib file by removing long, irrelevant 
-#' fields. It then fetches the publication list from google scholar for the 
-#' specified \code{author_id} using \code{\link[scholar]{get_publications}} ( 
-#' which returns a data.frame including the sholar publication ids and citation 
-#' counts). This information is then merge with the bibtex file and new/updated 
+#'
+#' The function first cleans up the input bib file by removing long, irrelevant
+#' fields. It then fetches the publication list from google scholar for the
+#' specified \code{author_id} using \code{\link[scholar]{get_publications}} (
+#' which returns a data.frame including the sholar publication ids and citation
+#' counts). This information is then merge with the bibtex file and new/updated
 #' citation counts are placed in the bibtex field \code{citationnum}.
-#' 
-#' By default the output is written to a new bibtex file called 
-#' \code{<bibin_stem>_scholarcites.bib}. Note that this process is \emph{lossy} 
-#' since some fields are dropped and therefore it is \bold{not} recommended to 
+#'
+#' By default the output is written to a new bibtex file called
+#' \code{<bibin_stem>_scholarcites.bib}. Note that this process is \emph{lossy}
+#' since some fields are dropped and therefore it is \bold{not} recommended to
 #' overwrite the original input file.
-#' 
+#'
 #' @param author_id The google scholar author id
 #' @param bibin,bibout The input and output bibtex files. \code{bibout} defaults
 #'   to \code{<bibin_stem>_scholarcites.bib}
+#' @param citekeys An optional vector specifying a subset of citekeys to use.
 #' @param clean Whether to remove difficult fields / clean up input file
-#' @param Force Whether to insist on updating the output file (see 
+#' @param Force Whether to insist on updating the output file (see
 #'   \code{\link[nat.utils]{RunCmdForNewerInput}})
-#'   
+#'
 #' @importFrom scholar get_publications
 #' @import RefManageR
-#'   
-#' @seealso \code{\link[nat.utils]{RunCmdForNewerInput}}, 
+#'
+#' @seealso \code{\link[nat.utils]{RunCmdForNewerInput}},
 #'   \code{\link[scholar]{get_publications}}
-#'   
+#'
 #' @examples
 #' \dontrun{
 #' add_scholar_cites_to_bib("cuXoCA8AAAAJ", 'mypubs.bib')
-#' 
+#'
+#' f="~/Greg/ProfessionalAdmin/cv_lyx/JefferisPublications.bib"
+#' bdsk_groups=read_bibdesk_static_groups(f)
+#' add_scholar_cites_to_bib("cuXoCA8AAAAJ", f, citekeys=bdsk_groups$SelectedCandidates)
+#'
 #' ## a sample rmarkdown chunk:
 #' # nb the block should have options like:
 #' # ```r bibstuff, echo=FALSE, results="hide", message=FALSE, warning=FALSE```
@@ -111,13 +116,13 @@ bibdesk_clean<-function(bibin, bibout=NULL) {
 #' library(paperutils)
 #' add_scholar_cites_to_bib("cuXoCA8AAAAJ", "~/cv/JefferisPublications.bib")
 #' # produces "~/cv/JefferisPublications_scholarcites.bib"
-#' 
+#'
 #' library(scholar)
 #' gs_prof=get_profile("cuXoCA8AAAAJ")
 #' }
 #' @export
-add_scholar_cites_to_bib<-function(author_id, bibin, bibout=NULL, clean=TRUE,
-                                   Force=TRUE) {
+add_scholar_cites_to_bib<-function(author_id, bibin, bibout=NULL, 
+                                   citekeys=NULL, clean=TRUE, Force=TRUE) {
   bibin=path.expand(bibin)
   if(is.null(bibout))
     bibout=file.path(paste0(tools::file_path_sans_ext(bibin), "_scholarcites.bib"))
@@ -131,6 +136,14 @@ add_scholar_cites_to_bib<-function(author_id, bibin, bibout=NULL, clean=TRUE,
   update_required=nat.utils::RunCmdForNewerInput(NULL, infiles=bibin, outfiles = bibout, Force=Force)
   if(!update_required) return(invisible(NA_character_))
   r=ReadBib(bibin)
+  if(length(citekeys)) {
+    read_keys=unname(names(r))
+    selected_keys=intersect(read_keys, citekeys)
+    missing_keys=setdiff(citekeys, read_keys)
+    if(length(missing_keys)) 
+      warning(length(missing_keys)," could not be found!")
+    r=r[selected_keys]
+  }
   df=get_publications(author_id)
   
   missing_gsids=character()
@@ -149,7 +162,7 @@ add_scholar_cites_to_bib<-function(author_id, bibin, bibout=NULL, clean=TRUE,
     }
   }
   if(length(missing_gsids)) {
-    warning("unable to find determine citation count for ",length(missing_gsids),
+    warning("unable to determine citation count for ",length(missing_gsids),
             " publications without google scholar ids.\n", 
             paste(missing_gsids, collapse = ","))
   }

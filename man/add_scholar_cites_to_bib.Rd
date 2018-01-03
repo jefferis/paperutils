@@ -4,8 +4,8 @@
 \alias{add_scholar_cites_to_bib}
 \title{Update citation counts in bib file for references with google scholar ids}
 \usage{
-add_scholar_cites_to_bib(author_id, bibin, bibout = NULL, clean = TRUE,
-  Force = TRUE)
+add_scholar_cites_to_bib(author_id, bibin, bibout = NULL, citekeys = NULL,
+  clean = TRUE, Force = TRUE)
 }
 \arguments{
 \item{author_id}{The google scholar author id}
@@ -13,35 +13,41 @@ add_scholar_cites_to_bib(author_id, bibin, bibout = NULL, clean = TRUE,
 \item{bibin, bibout}{The input and output bibtex files. \code{bibout} defaults
 to \code{<bibin_stem>_scholarcites.bib}}
 
+\item{citekeys}{An optional vector specifying a subset of citekeys to use.}
+
 \item{clean}{Whether to remove difficult fields / clean up input file}
 
-\item{Force}{Whether to insist on updating the output file (see 
+\item{Force}{Whether to insist on updating the output file (see
 \code{\link[nat.utils]{RunCmdForNewerInput}})}
 }
 \description{
-This is a rather specific function designed for my (Greg's) CV, based on 
-initial work by James Manton. The idea is that the bib file (probably 
-produced by BibDesk) contains a list of publications with google ids 
-specified in the bibtex field \code{googlescholarid}; at present these must 
-all have one single google scholar author (denoted by \code{author_id}) as a 
+This is a rather specific function designed for my (Greg's) CV, based on
+initial work by James Manton. The idea is that the bib file (probably
+produced by BibDesk) contains a list of publications with google ids
+specified in the bibtex field \code{googlescholarid}; at present these must
+all have one single google scholar author (denoted by \code{author_id}) as a
 co-author.
 }
 \details{
-The function first cleans up the input bib file by removing long, irrelevant 
-fields. It then fetches the publication list from google scholar for the 
-specified \code{author_id} using \code{\link[scholar]{get_publications}} ( 
-which returns a data.frame including the sholar publication ids and citation 
-counts). This information is then merge with the bibtex file and new/updated 
+The function first cleans up the input bib file by removing long, irrelevant
+fields. It then fetches the publication list from google scholar for the
+specified \code{author_id} using \code{\link[scholar]{get_publications}} (
+which returns a data.frame including the sholar publication ids and citation
+counts). This information is then merge with the bibtex file and new/updated
 citation counts are placed in the bibtex field \code{citationnum}.
 
-By default the output is written to a new bibtex file called 
-\code{<bibin_stem>_scholarcites.bib}. Note that this process is \emph{lossy} 
-since some fields are dropped and therefore it is \bold{not} recommended to 
+By default the output is written to a new bibtex file called
+\code{<bibin_stem>_scholarcites.bib}. Note that this process is \emph{lossy}
+since some fields are dropped and therefore it is \bold{not} recommended to
 overwrite the original input file.
 }
 \examples{
 \dontrun{
 add_scholar_cites_to_bib("cuXoCA8AAAAJ", 'mypubs.bib')
+
+f="~/Greg/ProfessionalAdmin/cv_lyx/JefferisPublications.bib"
+bdsk_groups=read_bibdesk_static_groups(f)
+add_scholar_cites_to_bib("cuXoCA8AAAAJ", f, citekeys=bdsk_groups$SelectedCandidates)
 
 ## a sample rmarkdown chunk:
 # nb the block should have options like:
@@ -56,6 +62,6 @@ gs_prof=get_profile("cuXoCA8AAAAJ")
 }
 }
 \seealso{
-\code{\link[nat.utils]{RunCmdForNewerInput}}, 
+\code{\link[nat.utils]{RunCmdForNewerInput}},
   \code{\link[scholar]{get_publications}}
 }
