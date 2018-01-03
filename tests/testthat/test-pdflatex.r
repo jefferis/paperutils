@@ -1,7 +1,7 @@
 context("Test handling of pdflatex pdfs")
 
 test_that("Find figures pages from pdf", {
-  lyxtmpdir=file.path('testdata','lyx_tmpdir')
+  lyxtmpdir=normalizePath(file.path('testdata','lyx_tmpdir'))
   expect_warning(figs<-find_figs(file.path(lyxtmpdir,'test.aux')),
                  regexp='NAs introduced',
                  info='warning due to omitted SI figure')
