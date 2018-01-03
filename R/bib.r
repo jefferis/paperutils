@@ -31,3 +31,16 @@ biber<-function(mustWork=TRUE){
   if(!nzchar(biber)) stop("Cannot find biber in path!")
   biber
 }
+
+read_bib_comments <- function(x) {
+  ll=readLines(x)
+  starts=grep("^@comment", ll)
+  if(!length(starts)) return(list())
+  stops=grep("^}", ll)
+  if(length(stops)!=length(starts))
+    stop("Unable to match up comment start and end points!")
+  res=mapply(function(x,y) ll[x:y], x=starts, y=stops, SIMPLIFY=FALSE)
+  nn=sub("@comment\\{(.*)\\{", "\\1",ll[starts])
+  names(res)=nn
+  res
+}

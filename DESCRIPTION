@@ -16,7 +16,9 @@ Imports:
     nat.utils (>= 0.4.1),
     scholar (>= 0.1.4),
     RefManageR,
-    XML
+    XML,
+    xml2,
+    utils
 Suggests:
     testthat,
     roxygen2,

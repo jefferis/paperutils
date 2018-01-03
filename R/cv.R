@@ -161,3 +161,47 @@ add_scholar_cites_to_bib<-function(author_id, bibin, bibout=NULL, clean=TRUE,
   WriteBib(r, bibout)
   invisible(bibout)
 }
+
+#' @importFrom xml2 read_xml
+#' @importFrom utils head tail
+read_bibdesk_xml <- function(x) {
+  res=read_bib_comments(x)
+  res=res[grep("BibDesk", names(res))]
+  if(!length(res))
+    stop("No BibDesk fields in this file!")
+  
+  topntail <- function(x) paste(tail(head(x, n=-1L), n=-1L), collapse = "\n")
+  res=sapply(res, topntail, simplify = F)
+  
+  sapply(res, read_xml, simplify = FALSE)
+}
+
+#' Read in the citekeys for each static group in a BibDesk file
+#'
+#' @details The function returns a named list with one element for each static
+#'   group. Each element contains the bibtex citekey for each item in the
+#'   corresponding static group.
+#'
+#' @param x Path to a BibDesk bib file
+#'
+#' @return A named list of vectors (see details)
+#' @export
+#'
+#' @importFrom xml2 xml_text xml_find_all
+#' @examples
+#' \donttest{
+#' res=read_bibdesk_static_groups("~/Greg/ProfessionalAdmin/cv_lyx/JefferisPublications.bib")
+#' res$Primary
+#' }
+read_bibdesk_static_groups <-function(x) {
+  r=read_bibdesk_xml(x)
+  r=r[["BibDesk Static Groups"]]
+  if(!length(r))
+    stop("Unable to identify any BibDesk static group information!")
+  vals=xml_text(xml_find_all(r, ".//string"))
+  keys=xml_text(xml_find_all(r, ".//key"))
+  
+  resl=list()
+  resl[vals[keys=='group name']]=vals[keys=='keys']
+  sapply(resl, function(x) strsplit(x, ",", fixed=TRUE)[[1]], simplify = FALSE)
+}
