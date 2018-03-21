@@ -7,14 +7,14 @@ reference:
   desc: ~
   contents:
   - '`extract_pdf`'
-  - '`gscompress`'
-  - '`extract_bookmarks`'
-  - '`make_bookmark_text`'
   - '`numpages`'
   - '`pdf2png`'
   - '`pdftk`'
   - '`pdftotext`'
   - '`pdftotextbin`'
+  - '`gscompress`'
+  - '`extract_bookmarks`'
+  - '`make_bookmark_text`'
 - title: Powerpoint manipulation
   desc: ~
   contents:
@@ -26,8 +26,8 @@ reference:
 - title: Adobe Illustrator and Scribus functions
   desc: ~
   contents:
-  - '`ailinkedfiles`'
   - '`linked_from_ai`'
+  - '`ailinkedfiles`'
   - '`linked_from_sla`'
   - '`fix_sla_links`'
 - title: Bibliography functions
@@ -35,11 +35,11 @@ reference:
   contents:
   - '`add_scholar_cites_to_bib`'
   - '`bibdesk_clean`'
-  - '`biber_cache`'
-  - '`bibtool`'
   - '`read_bibdesk_bib`'
   - '`read_bibdesk_static_groups`'
-- title: LyX functions
+  - '`bibtool`'
+  - '`biber_cache`'
+- title: LyX/LaTeX functions
   desc: ~
   contents:
   - '`linked_from_lyx`'
