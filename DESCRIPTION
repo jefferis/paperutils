@@ -1,7 +1,6 @@
 Package: paperutils
 Title: Support preparation of journal articles from LyX/pdflatex output
 Version: 0.3
-Date: 2014-12-01
 Author: Gregory Jefferis and James Manton
 Maintainer: Gregory Jefferis <jefferis@gmail.com>
 Description: Utility functions to work with LyX text files, Illustrator
