@@ -1,8 +1,11 @@
 Package: paperutils
 Title: Support preparation of journal articles from LyX/pdflatex output
 Version: 0.3
-Author: Gregory Jefferis and James Manton
-Maintainer: Gregory Jefferis <jefferis@gmail.com>
+Authors@R: c(
+    person("Gregory","Jefferis", email="jefferis@gmail.com", 
+    role = c("aut", "cre"), comment = c(ORCID = "0000-0002-0587-9355")),
+    person("James", "Manton", role = c("aut"), comment = c(ORCID = "0000-0001-9260-3156"))
+    )
 Description: Utility functions to work with LyX text files, Illustrator
     figures, Scribus documents and final pdf output from pdflatex. Can extract
     and combine pages from PDF files that we use when turning a single pdflatex
