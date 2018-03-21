@@ -85,11 +85,6 @@
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
-<div id="r-dependencies" class="section level3">
-<h3 class="hasAnchor">
-<a href="#r-dependencies" class="anchor"></a>R Dependencies</h3>
-<p>The package <a href="https://github.com/jkeirstead/scholar">scholar</a> is necessary. However currently the CRAN version is misssing the ability to specify a number of publications to return for each author, so that only 20 can be returned. Therefore it is recommended to install the latest version (see Bleeding Edge below).</p>
-</div>
 <div id="system-dependencies" class="section level3">
 <h3 class="hasAnchor">
 <a href="#system-dependencies" class="anchor"></a>System Dependencies</h3>
@@ -100,17 +95,17 @@
 <li>perl</li>
 </ul>
 </div>
-<div id="released-versions" class="section level3">
+<div id="r-dependencies" class="section level3">
 <h3 class="hasAnchor">
-<a href="#released-versions" class="anchor"></a>Released versions</h3>
-<div class="sourceCode"><pre class="sourceCode R"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">"paperutils"</span>,<span class="dt">repos=</span><span class="st">'http://jefferislab.org/R'</span>,<span class="dt">type=</span><span class="st">'source'</span>)</code></pre></div>
+<a href="#r-dependencies" class="anchor"></a>R Dependencies</h3>
+<p>The package <a href="https://github.com/jkeirstead/scholar">scholar</a> is necessary for some bibliograpy related functions. However currently the CRAN version is misssing the ability to specify a number of publications to return for each author, so that only 20 can be returned. Therefore the package installs the latest version from GitHub.</p>
 </div>
-<div id="bleeding-edge" class="section level3">
+<div id="package-install" class="section level3">
 <h3 class="hasAnchor">
-<a href="#bleeding-edge" class="anchor"></a>Bleeding Edge</h3>
-<p>Straight from github with Hadley Wickham’s <a href="https://github.com/hadley/devtools">devtools</a> package:</p>
+<a href="#package-install" class="anchor"></a>Package Install</h3>
+<p>Install straight from github with Hadley Wickham’s <a href="https://github.com/hadley/devtools">devtools</a> package:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="cf">if</span>(<span class="op">!</span><span class="kw">require</span>(<span class="st">"devtools"</span>)) <span class="kw">install.packages</span>(<span class="st">"devtools"</span>)
-devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/devtools/topics/install_github">install_github</a></span>(<span class="kw">c</span>(<span class="st">"jkeirstead/scholar"</span>, <span class="st">"jefferis/paperutils"</span>))</code></pre></div>
+devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/devtools/topics/install_github">install_github</a></span>(<span class="st">"jefferis/paperutils"</span>)</code></pre></div>
 </div>
 </div>
 </div>
