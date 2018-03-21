@@ -7,9 +7,9 @@
 unzip_pptx(x, exdir = tempfile(pattern = basename(x)))
 }
 \arguments{
-\item{x}{Path to PowwerPoint pptx file}
+\item{x}{Path to PowerPoint pptx file}
 
-\item{exdir}{Path to temporary diectory}
+\item{exdir}{Path to temporary directory}
 }
 \value{
 \code{exdir}

@@ -7,7 +7,7 @@
 is.pptx(x, Verbose = TRUE)
 }
 \arguments{
-\item{x}{Path to PowwerPoint pptx file}
+\item{x}{Path to PowerPoint pptx file}
 
 \item{Verbose}{Whether to provide a user message on error.}
 }

@@ -2,27 +2,27 @@
 % Please edit documentation in R/lyxutils.r
 \name{current_lyx_tempfile}
 \alias{current_lyx_tempfile}
-\title{Full path to most recent temporary pdf previewed by lyx}
+\title{Full path to most recent temporary PDF previewed by LyX}
 \usage{
 current_lyx_tempfile(ftype = c("pdf", "aux", "dir", "tex", "lof"),
   lyxfile = NULL, tmproot = NULL)
 }
 \arguments{
-\item{ftype}{Type of file (or 'dir' for encolsing directory)}
+\item{ftype}{Type of file (or 'dir' for enclosing directory)}
 
-\item{lyxfile}{Optional stem or full name of lyx file}
+\item{lyxfile}{Optional stem or full name of LyX file}
 
 \item{tmproot}{Optional path to temporary directory containing LyX tempdir}
 }
 \value{
-Path to current lyx temporary directory /pdf
+Path to current LyX temporary directory /pdf
 }
 \description{
 Can also return e.g. aux file or containing directory.
 }
 \details{
 Uses the modification date of the tex file in the directory to
-  choose lyx dir in case of ambiguity => last previewed file.
+  choose LyX dir in case of ambiguity => last previewed file.
 }
 \examples{
 \dontrun{
@@ -35,7 +35,7 @@ current_lyx_tempfile(lyxfile='main.lyx')
 }
 }
 \seealso{
-Other lyx: \code{\link{lyx_citekeys}},
+Other LyX: \code{\link{lyx_citekeys}},
   \code{\link{lyxexport}}, \code{\link{lyxhtml2html}}
 }
 \author{

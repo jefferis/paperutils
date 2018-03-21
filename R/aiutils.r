@@ -3,7 +3,7 @@
 #' List all linked files from given illustrator file (ai or pdf)
 #' 
 #' @param x Path to Illustrator file (ai,pdf)
-#' @param AbsolutePaths Return abolute path to linked files
+#' @param AbsolutePaths Return absolute path to linked files
 #' @param mustWork If true, check that linked files actually exist
 #' @return Character vector of paths to linked files
 #' @author jefferis
@@ -41,7 +41,7 @@ linked_from_ai<-function(x,AbsolutePaths=TRUE,mustWork=NA){
 #' pure R implementation of ailinkedfiles.pl
 #' 
 #' This is much slower than perl version for large files
-#' This appears to be due to speed of readLines
+#' This appears to be due to speed of \code{readLines}
 #' @inheritParams linked_from_ai
 #' @return Character vector of paths to linked files
 #' @author jefferis

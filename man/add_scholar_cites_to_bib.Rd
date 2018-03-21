@@ -32,7 +32,7 @@ co-author.
 The function first cleans up the input bib file by removing long, irrelevant
 fields. It then fetches the publication list from google scholar for the
 specified \code{author_id} using \code{\link[scholar]{get_publications}} (
-which returns a data.frame including the sholar publication ids and citation
+which returns a data.frame including the scholar publication ids and citation
 counts). This information is then merge with the bibtex file and new/updated
 citation counts are placed in the bibtex field \code{citationnum}.
 

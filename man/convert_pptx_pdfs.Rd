@@ -2,7 +2,7 @@
 % Please edit documentation in R/pptxutils.r
 \name{convert_pptx_pdfs}
 \alias{convert_pptx_pdfs}
-\title{Convert all the pdfs in PowerPoint presentation into higher res pngs}
+\title{Convert all the PDFs in PowerPoint presentation into higher res PNGs}
 \usage{
 convert_pptx_pdfs(x, outpptx = NULL, pngres = 450, ...)
 }
@@ -16,16 +16,16 @@ convert_pptx_pdfs(x, outpptx = NULL, pngres = 450, ...)
 \item{...}{Additional arguments passed to \code{zip_pptx_dir}}
 }
 \description{
-PowerPoint 2010 et al will convert any pdfs that have been dropped onto 
-slides into bitmap pngs. Unfortuantely they do this at 72 dpi, which is 
-typically much too low resolution. This function makes higher resolution 
-versions of the pngs. Note that it will not upgrade pngs that already meet 
-the requested resolution. If this means that no images at all are upgraded 
-then the output file will be identical to the input.
+PowerPoint 2010 et al will convert any PDFs that have been dropped onto
+slides into bitmap PNGs. Unfortunately they do this at 72 dpi, which is
+typically much too low resolution. This function makes higher resolution
+versions of the PNGs Note that it will not upgrade PNGs that already meet the
+requested resolution. If this means that no images at all are upgraded then
+the output file will be identical to the input.
 }
 \details{
-This function depends on having the 
-  \href{http://www.imagemagick.org/}{ImageMagick} \bold{convert} function in 
+This function depends on having the
+  \href{http://www.imagemagick.org/}{ImageMagick} \bold{convert} function in
   the path.
 }
 \seealso{

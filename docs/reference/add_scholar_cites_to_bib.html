@@ -138,7 +138,7 @@ to <code>&lt;bibin_stem&gt;_scholarcites.bib</code></p></td>
     <p>The function first cleans up the input bib file by removing long, irrelevant
 fields. It then fetches the publication list from google scholar for the
 specified <code>author_id</code> using <code><a href='http://www.rdocumentation.org/packages/scholar/topics/get_publications'>get_publications</a></code> (
-which returns a data.frame including the sholar publication ids and citation
+which returns a data.frame including the scholar publication ids and citation
 counts). This information is then merge with the bibtex file and new/updated
 citation counts are placed in the bibtex field <code>citationnum</code>.</p>
 <p>By default the output is written to a new bibtex file called

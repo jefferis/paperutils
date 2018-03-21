@@ -102,14 +102,14 @@
     <h2 class="hasAnchor" id="package-options"><a class="anchor" href="#package-options"></a>Package options</h2>
 
     
-    <p>There is one package option at present:</p>  
+    <p>There are three package options at present:</p>  
 <p></p><ul>
+<li><p>paperutils.pdftk sets the path to the pdftk command line tool used by
+  <code><a href='extract_pdf.html'>extract_pdf</a></code> and friends.</p></li>
 <li><p>paperutils.convert can be used to set the path to the ImageMagick 
   convert function used by <code><a href='convert_pptx_pdfs.html'>convert_pptx_pdfs</a></code> and friends.</p></li>
-<li><p>paperutils.bibtool sets thep path to the bibtool commandline tool 
+<li><p>paperutils.bibtool sets thep path to the bibtool command line tool 
   used by <code><a href='bibdesk_clean.html'>bibdesk_clean</a></code> and friends.</p></li>
-<li><p>paperutils.pdftk sets the path to the pdftk commandline tool used by
-  <code><a href='extract_pdf.html'>extract_pdf</a></code> and friends.</p></li>
 </ul>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
@@ -118,6 +118,9 @@
   <code><a href='extract_pdf.html'>extract_pdf</a></code></p>
     
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='co'># Show state of elmr package options</span>
+<span class='fu'>options</span>()[<span class='fu'>grep</span>(<span class='st'>'^paperutils\\.'</span>, <span class='fu'>names</span>(<span class='fu'>options</span>()))]</div><div class='output co'>#&gt; named list()</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -128,7 +131,9 @@
       <li><a href="#package-options">Package options</a></li>
 
       <li><a href="#see-also">See also</a></li>
-          </ul>
+      
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
   </div>
 </div>

@@ -17,22 +17,26 @@ paperutils: PDF manipulation utilities (wrapping pdftk and ghostscript)
 \section{Package options}{
 
   
-  There is one package option at present:
+  There are three package options at present:
   
   \itemize{
+  
+  \item paperutils.pdftk sets the path to the pdftk command line tool used by
+  \code{\link{extract_pdf}} and friends.
   
   \item paperutils.convert can be used to set the path to the ImageMagick 
   convert function used by \code{\link{convert_pptx_pdfs}} and friends.
   
-  \item paperutils.bibtool sets thep path to the bibtool commandline tool 
+  \item paperutils.bibtool sets thep path to the bibtool command line tool 
   used by \code{\link{bibdesk_clean}} and friends.
-  
-  \item paperutils.pdftk sets the path to the pdftk commandline tool used by
-  \code{\link{extract_pdf}} and friends.
   
   }
 }
 
+\examples{
+# Show state of elmr package options
+options()[grep('^paperutils\\\\.', names(options()))]
+}
 \seealso{
 \code{\link{convert_pptx_pdfs}}, \code{\link{bibdesk_clean}},
   \code{\link{extract_pdf}}

@@ -8,11 +8,11 @@ extract_bookmarks<-function(pdfin,bookmarks){
   bookmarks
 }
 
-#' Insert and Extract bookmarks from a pdf
-#' @param pdfin,pdfout Input and Output pdfs
+#' Insert and Extract bookmarks from a PDF
+#' @param pdfin,pdfout Input and Output PDFs
 #' @param bookmarks Path to a bookmarks PDF file in pdftk format or a character
 #'   vector of length >1 containing bookmark text.
-#' @return location of modified pdf
+#' @return location of modified PDF
 #' @author jefferis
 #' @export
 #' @seealso \code{\link{make_bookmark_text}}

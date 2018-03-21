@@ -4,7 +4,7 @@
 \alias{extract_pdf}
 \alias{extractpdf}
 \alias{extractpdf}
-\title{Extract pages from a pdf to new pdf(s)}
+\title{Extract pages from a PDF to new PDF(s)}
 \usage{
 extract_pdf(pdfin, pages, pdfout, prefix = NULL, DryRun = F,
   gscomp = FALSE, bookmarks = NULL)
@@ -13,21 +13,21 @@ extractpdf(pdfin, pages, pdfout, prefix = NULL, DryRun = F,
   gscomp = FALSE, bookmarks = NULL)
 }
 \arguments{
-\item{pdfin, pdfout}{Path to input and output pdf}
+\item{pdfin, pdfout}{Path to input and output PDF}
 
 \item{pages}{Integer vector or list. If named, the names specify output files}
 
-\item{prefix}{a prefix to add to the start of all output pdf file names}
+\item{prefix}{a prefix to add to the start of all output PDF file names}
 
 \item{DryRun}{Just say what would happen (when TRUE)}
 
 \item{gscomp}{Compress with ghostscript}
 
 \item{bookmarks}{Bookmarks info file (pdftk format) that can be used to add
-bookmarks to the output pdf.}
+bookmarks to the output PDF}
 }
 \description{
-Extract pages from a pdf to new pdf(s)
+Extract pages from a PDF to new PDF(s)
 }
 \examples{
 \dontrun{

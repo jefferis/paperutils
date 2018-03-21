@@ -10,7 +10,7 @@
 #' }
 #' @author jefferis
 #' @export
-#' @family lyx,linked_from
+#' @family LyX,linked_from
 linked_from_lyx<-function(x,AbsolutePaths=TRUE,mustWork=NA){
   ll=readLines(x)
   lf=grep('filename',value=TRUE,ll,useBytes=TRUE)
@@ -23,18 +23,18 @@ linked_from_lyx<-function(x,AbsolutePaths=TRUE,mustWork=NA){
   ff
 }
 
-#' Full path to most recent temporary pdf previewed by lyx
+#' Full path to most recent temporary PDF previewed by LyX
 #' 
 #' Can also return e.g. aux file or containing directory.
 #' @details Uses the modification date of the tex file in the directory to
-#'   choose lyx dir in case of ambiguity => last previewed file.
-#' @param ftype Type of file (or 'dir' for encolsing directory)
-#' @param lyxfile Optional stem or full name of lyx file
+#'   choose LyX dir in case of ambiguity => last previewed file.
+#' @param ftype Type of file (or 'dir' for enclosing directory)
+#' @param lyxfile Optional stem or full name of LyX file
 #' @param tmproot Optional path to temporary directory containing LyX tempdir
-#' @return Path to current lyx temporary directory /pdf
+#' @return Path to current LyX temporary directory /pdf
 #' @author jefferis
 #' @export
-#' @family lyx
+#' @family LyX
 #' @examples
 #' \dontrun{
 #' # current lyx pdf
@@ -62,7 +62,8 @@ current_lyx_tempfile<-function(ftype=c('pdf','aux','dir','tex','lof'),lyxfile=NU
   }
   res <- if(ftype=='dir') dirname(cand_files)
       else sub('tex$',ftype,cand_files)
-  if(!length(res) || !file.exists(res)) stop("Unable to find requested lyx temp file. Please preview in LyX")
+  if(!length(res) || !file.exists(res)) 
+    stop("Unable to find requested LyX temp file. Please preview in LyX")
   res
 }
 
@@ -75,7 +76,7 @@ current_lyx_tempfile<-function(ftype=c('pdf','aux','dir','tex','lof'),lyxfile=NU
 #' to see which parameter (which differs from the format name in the
 #' File->Export menu) should be passed as format.
 #' @export
-#' @family lyx
+#' @family LyX
 lyxexport <-function(x, outfile=NULL, format="xhtml") {
   if(is.null(outfile)) {
     outfile=paste(tools::file_path_sans_ext(x),sep=".", format)
@@ -103,18 +104,18 @@ lyx<-function(args, ...) {
 
 
 #' Convert a LyXHTML file to an html file that can be opened by Word
-#' 
-#' LyXHTML is currently (LyX 2.1 series) the highestq quality html export 
+#'
+#' LyXHTML is currently (LyX 2.1 series) the highest quality html export
 #' available by default. However, it cannot be opened by word immediately
 #' because it interposes a small xml type header before the html content. This
 #' function removes that header and renames the file with a .html extension by
 #' default.
 #' @param infile path to xhtml file
 #' @param outfile path to output html file (defaults to <infilestem>.<html>)
-#' @family lyx
+#' @family LyX
 #' @export
 #' @importFrom XML xmlParse saveXML xmlChildren
-#' @examples 
+#' @examples
 #' \dontrun{
 #' lyxfile=system.file('tests/testthat/testdata/lyx/test.lyx', package='paperutils')
 #' lyxhtml=tempfile(pattern = basename(lyxfile), fileext = '.xhtml')
@@ -144,7 +145,7 @@ lyxhtml2html<-function(infile, outfile=NULL){
 #'   
 #' @param auxfile Path to a latex aux file (see details for default behaviour)
 #' @export
-#' @family lyx
+#' @family LyX
 #' @family bib
 #' @return A character vector of citation keys in the order in which they are
 #'   cited in the LyX document.

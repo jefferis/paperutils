@@ -2,18 +2,18 @@
 % Please edit documentation in R/pdftk.r
 \name{numpages}
 \alias{numpages}
-\title{Return number of pages in pdf}
+\title{Return number of pages in PDF}
 \usage{
 numpages(pdf)
 }
 \arguments{
-\item{pdf}{Path to input pdf file}
+\item{pdf}{Path to input PDF file}
 }
 \value{
 number of pages
 }
 \description{
-Return number of pages in pdf
+Return number of pages in PDF
 }
 \author{
 jefferis

@@ -11,9 +11,9 @@ pdftk<-function(){
   path
 }
 
-#' Return number of pages in pdf
+#' Return number of pages in PDF
 #' 
-#' @param pdf Path to input pdf file
+#' @param pdf Path to input PDF file
 #' @return number of pages
 #' @author jefferis
 #' @export
@@ -23,15 +23,15 @@ numpages<-function(pdf){
   return(as.integer(sub("NumberOfPages:[ ]*(\\d+)","\\1",tt,perl=TRUE)))
 }
 
-#' Extract pages from a pdf to new pdf(s)
+#' Extract pages from a PDF to new PDF(s)
 #' 
-#' @param pdfin,pdfout Path to input and output pdf
+#' @param pdfin,pdfout Path to input and output PDF
 #' @param pages Integer vector or list. If named, the names specify output files
-#' @param prefix a prefix to add to the start of all output pdf file names
+#' @param prefix a prefix to add to the start of all output PDF file names
 #' @param DryRun Just say what would happen (when TRUE)
 #' @param gscomp Compress with ghostscript
 #' @param bookmarks Bookmarks info file (pdftk format) that can be used to add
-#'   bookmarks to the output pdf.
+#'   bookmarks to the output PDF
 #' @author jefferis
 #' @export
 #' @aliases extractpdf

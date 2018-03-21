@@ -1,13 +1,13 @@
 context("Test Ghostscript")
 
-test_that("ghostscript can compress pdf", {
+test_that("ghostscript can compress PDF", {
   aipdf=file.path('testdata','lyx','composite_fig.pdf')
   expect_output(out<-gscompress(aipdf),'pdfwrite',
                 info='Call ghostscript to compress pdf')
   on.exit(unlink(out))
   baseline_out=sub('\\.pdf','_gso.pdf',normalizePath(aipdf))
   expect_equal(out,baseline_out,
-               info='Correct path to default ouput file')
+               info='Correct path to default output file')
   
   expect_true(file.exists(out),
                info='Output file has been made')
@@ -18,7 +18,7 @@ test_that("ghostscript can compress pdf", {
   
 })
 
-test_that('ghostscript can safely compress a pdf to same output',{
+test_that('ghostscript can safely compress a PDF to same output',{
   # setup
   td=tempfile()
   #on.exit(unlink(td, recursive = T))

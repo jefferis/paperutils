@@ -45,7 +45,7 @@ bibtool_path<-function(mustWork=TRUE){
 #' include the \code{annote} and \code{bdsk-url-*} and \code{bdsk-file} fields.
 #' 
 #' @param bibin Path to input file
-#' @param bibout Path to output file. The defacult value of \code{NULL} will 
+#' @param bibout Path to output file. The default value of \code{NULL} will 
 #'   generate a temporary file.
 #' @return A character vector containing the path to the output file or 
 #'   NA_character_ when conversion fails
@@ -79,7 +79,7 @@ bibdesk_clean<-function(bibin, bibout=NULL) {
 #' The function first cleans up the input bib file by removing long, irrelevant
 #' fields. It then fetches the publication list from google scholar for the
 #' specified \code{author_id} using \code{\link[scholar]{get_publications}} (
-#' which returns a data.frame including the sholar publication ids and citation
+#' which returns a data.frame including the scholar publication ids and citation
 #' counts). This information is then merge with the bibtex file and new/updated
 #' citation counts are placed in the bibtex field \code{citationnum}.
 #'

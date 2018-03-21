@@ -1,8 +1,8 @@
 # Functions to help with pptx format files
 
 #' Unzip a PowerPoint pptx to a temporary directory
-#' @param x Path to PowwerPoint pptx file
-#' @param exdir Path to temporary diectory 
+#' @param x Path to PowerPoint pptx file
+#' @param exdir Path to temporary directory 
 #' @return \code{exdir}
 #' @export
 unzip_pptx<-function(x, exdir=tempfile(pattern = basename(x))) {
@@ -65,17 +65,17 @@ zip_pptx_dir<-function(x, pptx, action=c("freshen", "update", "error"), files=NU
   pptx
 }
 
-#' Convert all the pdfs in PowerPoint presentation into higher res pngs
-#' 
-#' PowerPoint 2010 et al will convert any pdfs that have been dropped onto 
-#' slides into bitmap pngs. Unfortuantely they do this at 72 dpi, which is 
-#' typically much too low resolution. This function makes higher resolution 
-#' versions of the pngs. Note that it will not upgrade pngs that already meet 
-#' the requested resolution. If this means that no images at all are upgraded 
-#' then the output file will be identical to the input.
-#' 
-#' @details This function depends on having the 
-#'   \href{http://www.imagemagick.org/}{ImageMagick} \bold{convert} function in 
+#' Convert all the PDFs in PowerPoint presentation into higher res PNGs
+#'
+#' PowerPoint 2010 et al will convert any PDFs that have been dropped onto
+#' slides into bitmap PNGs. Unfortunately they do this at 72 dpi, which is
+#' typically much too low resolution. This function makes higher resolution
+#' versions of the PNGs Note that it will not upgrade PNGs that already meet the
+#' requested resolution. If this means that no images at all are upgraded then
+#' the output file will be identical to the input.
+#'
+#' @details This function depends on having the
+#'   \href{http://www.imagemagick.org/}{ImageMagick} \bold{convert} function in
 #'   the path.
 #' @param x A PowerPoint pptx file or an expanded directory.
 #' @param outpptx Path to output pptx file (default "inputfilestem_fixed.pptx")
@@ -149,7 +149,7 @@ is.pptx<-function(x, Verbose=TRUE) {
   ziplist[1,'Name']=="[Content_Types].xml"
 }
 
-#' Convert pdf file to a png using imagemagick convert tool
+#' Convert pdf file to a png using ImageMagick convert tool
 #' 
 #' @param pdf Path to input pdf
 #' @param png Path to output png

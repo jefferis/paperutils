@@ -22,6 +22,6 @@ to see which parameter (which differs from the format name in the
 File->Export menu) should be passed as format.
 }
 \seealso{
-Other lyx: \code{\link{current_lyx_tempfile}},
+Other LyX: \code{\link{current_lyx_tempfile}},
   \code{\link{lyx_citekeys}}, \code{\link{lyxhtml2html}}
 }

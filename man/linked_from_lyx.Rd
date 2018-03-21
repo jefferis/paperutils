@@ -9,7 +9,7 @@ linked_from_lyx(x, AbsolutePaths = TRUE, mustWork = NA)
 \arguments{
 \item{x}{Path to LyX file}
 
-\item{AbsolutePaths}{Return abolute path to linked files}
+\item{AbsolutePaths}{Return absolute path to linked files}
 
 \item{mustWork}{If true, check that linked files actually exist}
 }

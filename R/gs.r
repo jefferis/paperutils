@@ -1,11 +1,12 @@
-#' Compress a pdf using ghostscript
-#' 
+#' Compress a PDF using ghostscript
+#'
 #' When pdfout is missing it defaults to <input>_gso.pdf
-#' 
+#'
 #' This seems to work well for pdflatex output
-#' @param pdfin,pdfout Input and Output pdfs
-#' @param firstpage,lastpage Page range (defaults to firstpage = 1, lastpage = last in pdf)
-#' @param pdflevel Minium compatible pdf version of output file
+#' @param pdfin,pdfout Input and Output PDFs
+#' @param firstpage,lastpage Page range (defaults to firstpage = 1, lastpage =
+#'   last in PDF)
+#' @param pdflevel Minimum compatible PDF version of output file
 #' @param gsopts Further options for ghostscript
 #' @param Force When FALSE, only update file for newer input
 #' @return character vector with path to pdfout

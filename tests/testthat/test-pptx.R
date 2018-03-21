@@ -18,7 +18,7 @@ test_that("unzip_pptx works", {
   zd=unzip(pptx, list = T)
   expect_true(all(zd[,'Name']%in%ff))
   
-  # don't run in absence of imagemagick
+  # don't run in absence of ImageMagick
   if(isTRUE(nzchar(convert()))){
     expect_equal(pngres(file.path(td, 'ppt', 'media', 'image2.png')), 72, tol=1e-3)
   }

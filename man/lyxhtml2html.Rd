@@ -12,7 +12,7 @@ lyxhtml2html(infile, outfile = NULL)
 \item{outfile}{path to output html file (defaults to <infilestem>.<html>)}
 }
 \description{
-LyXHTML is currently (LyX 2.1 series) the highestq quality html export 
+LyXHTML is currently (LyX 2.1 series) the highest quality html export
 available by default. However, it cannot be opened by word immediately
 because it interposes a small xml type header before the html content. This
 function removes that header and renames the file with a .html extension by
@@ -27,6 +27,6 @@ lyxhtml2html(lyxhtml)
 }
 }
 \seealso{
-Other lyx: \code{\link{current_lyx_tempfile}},
+Other LyX: \code{\link{current_lyx_tempfile}},
   \code{\link{lyx_citekeys}}, \code{\link{lyxexport}}
 }

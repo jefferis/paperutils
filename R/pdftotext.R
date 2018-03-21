@@ -10,9 +10,9 @@ pdftotextbin<-function(){
   path
 }
 
-#' Invoke pdftotext tool to extrat text from a PDF document
+#' Invoke pdftotext tool to extract text from a PDF document
 #' 
-#' @param x Path to pdf
+#' @param x Path to PDF
 #' @param outfile Optional output file (defaults to <pdfstem.txt>)
 #' @param first Optional page to start conversion
 #' @param last Optional page to finish conversion

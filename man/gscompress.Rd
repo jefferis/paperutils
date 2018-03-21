@@ -2,17 +2,18 @@
 % Please edit documentation in R/gs.r
 \name{gscompress}
 \alias{gscompress}
-\title{Compress a pdf using ghostscript}
+\title{Compress a PDF using ghostscript}
 \usage{
 gscompress(pdfin, pdfout, firstpage, lastpage, pdflevel = "1.5",
   gsopts = "", Force = TRUE)
 }
 \arguments{
-\item{pdfin, pdfout}{Input and Output pdfs}
+\item{pdfin, pdfout}{Input and Output PDFs}
 
-\item{firstpage, lastpage}{Page range (defaults to firstpage = 1, lastpage = last in pdf)}
+\item{firstpage, lastpage}{Page range (defaults to firstpage = 1, lastpage =
+last in PDF)}
 
-\item{pdflevel}{Minium compatible pdf version of output file}
+\item{pdflevel}{Minimum compatible PDF version of output file}
 
 \item{gsopts}{Further options for ghostscript}
 

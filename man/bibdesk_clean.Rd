@@ -9,7 +9,7 @@ bibdesk_clean(bibin, bibout = NULL)
 \arguments{
 \item{bibin}{Path to input file}
 
-\item{bibout}{Path to output file. The defacult value of \code{NULL} will 
+\item{bibout}{Path to output file. The default value of \code{NULL} will 
 generate a temporary file.}
 }
 \value{

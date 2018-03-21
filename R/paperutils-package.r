@@ -10,13 +10,13 @@
 #'   
 #'   \itemize{
 #'   
-#'   \item paperutils.pdftk sets the path to the pdftk commandline tool used by
+#'   \item paperutils.pdftk sets the path to the pdftk command line tool used by
 #'   \code{\link{extract_pdf}} and friends.
 #'   
 #'   \item paperutils.convert can be used to set the path to the ImageMagick 
 #'   convert function used by \code{\link{convert_pptx_pdfs}} and friends.
 #'   
-#'   \item paperutils.bibtool sets thep path to the bibtool commandline tool 
+#'   \item paperutils.bibtool sets thep path to the bibtool command line tool 
 #'   used by \code{\link{bibdesk_clean}} and friends.
 #'   
 #'   }

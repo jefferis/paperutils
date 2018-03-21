@@ -2,7 +2,7 @@
 % Please edit documentation in R/pptxutils.r
 \name{pdf2png}
 \alias{pdf2png}
-\title{Convert pdf file to a png using imagemagick convert tool}
+\title{Convert pdf file to a png using ImageMagick convert tool}
 \usage{
 pdf2png(pdf, png, res = 300)
 }
@@ -17,5 +17,5 @@ pdf2png(pdf, png, res = 300)
 Logical value indicating success (or failure) of operation
 }
 \description{
-Convert pdf file to a png using imagemagick convert tool
+Convert pdf file to a png using ImageMagick convert tool
 }

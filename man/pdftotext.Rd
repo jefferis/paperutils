@@ -2,13 +2,13 @@
 % Please edit documentation in R/pdftotext.R
 \name{pdftotext}
 \alias{pdftotext}
-\title{Invoke pdftotext tool to extrat text from a PDF document}
+\title{Invoke pdftotext tool to extract text from a PDF document}
 \usage{
 pdftotext(x, outfile = NULL, first = NULL, last = NULL, layout = FALSE,
   table = FALSE, raw = FALSE, ...)
 }
 \arguments{
-\item{x}{Path to pdf}
+\item{x}{Path to PDF}
 
 \item{outfile}{Optional output file (defaults to <pdfstem.txt>)}
 
@@ -26,7 +26,7 @@ the return value of the system call or, if outfile has the signalling
   value of \code{FALSE}, the contents of the text file as a character vector.
 }
 \description{
-Invoke pdftotext tool to extrat text from a PDF document
+Invoke pdftotext tool to extract text from a PDF document
 }
 \details{
 Run pdftotext -help for details
