@@ -26,3 +26,4 @@ Suggests:
     testthat
 RoxygenNote: 6.0.1
 SystemRequirements: pdftk, ghostscript, perl
+BugReports: https://github.com/jefferis/paperutils/issues
