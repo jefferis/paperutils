@@ -21,9 +21,11 @@ Imports:
     utils,
     XML,
     xml2
-Suggests: 
+Suggests:
+    spelling, 
     roxygen2,
     testthat
 RoxygenNote: 6.0.1
 SystemRequirements: pdftk, ghostscript, perl
 BugReports: https://github.com/jefferis/paperutils/issues
+Language: en-GB
