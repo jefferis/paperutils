@@ -1,0 +1,51 @@
+reference:
+- title: Summary package documentation
+  desc: ~
+  contents:
+  - '`paperutils`'
+- title: PDF manipulation
+  desc: ~
+  contents:
+  - '`extract_pdf`'
+  - '`gscompress`'
+  - '`extract_bookmarks`'
+  - '`make_bookmark_text`'
+  - '`numpages`'
+  - '`pdf2png`'
+  - '`pdftk`'
+  - '`pdftotext`'
+  - '`pdftotextbin`'
+- title: Powerpoint manipulation
+  desc: ~
+  contents:
+  - '`is.pptx`'
+  - '`unzip_pptx`'
+  - '`zip_pptx_dir`'
+  - '`convert_pptx_pdfs`'
+  - '`pngres`'
+- title: Adobe Illustrator and Scribus functions
+  desc: ~
+  contents:
+  - '`ailinkedfiles`'
+  - '`linked_from_ai`'
+  - '`linked_from_sla`'
+  - '`fix_sla_links`'
+- title: Bibliography functions
+  desc: ~
+  contents:
+  - '`add_scholar_cites_to_bib`'
+  - '`bibdesk_clean`'
+  - '`biber_cache`'
+  - '`bibtool`'
+  - '`read_bibdesk_bib`'
+  - '`read_bibdesk_static_groups`'
+- title: LyX functions
+  desc: ~
+  contents:
+  - '`linked_from_lyx`'
+  - '`lyx_citekeys`'
+  - '`lyxexport`'
+  - '`lyxhtml2html`'
+  - '`current_lyx_tempfile`'
+  - '`find_figs`'
+  - '`find_supplemental`'
