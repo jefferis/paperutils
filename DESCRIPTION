@@ -1,26 +1,26 @@
 Package: paperutils
-Maintainer: Gregory Jefferis <jefferis@gmail.com>
-Author: Gregory Jefferis and James Manton
+Title: Support preparation of journal articles from LyX/pdflatex output
 Version: 0.3
 Date: 2014-12-01
-License: GPL-3
-Title: Support preparation of journal articles from LyX/pdflatex output
+Author: Gregory Jefferis and James Manton
+Maintainer: Gregory Jefferis <jefferis@gmail.com>
 Description: Utility functions to work with LyX text files, Illustrator
     figures, Scribus documents and final pdf output from pdflatex. Can extract
     and combine pages from PDF files that we use when turning a single pdflatex
     output file into the individual pages that many journals still want. Can
     also do a decent job of compressing pdflatex output using ghostscript.
     Finally has options to read and write bookmarks.
+License: GPL-3
 URL: https://github.com/jefferis/paperutils
-Imports:
+Imports: 
     nat.utils (>= 0.4.1),
-    scholar (>= 0.1.4),
     RefManageR,
+    scholar (>= 0.1.4),
+    utils,
     XML,
-    xml2,
-    utils
-Suggests:
-    testthat,
+    xml2
+Suggests: 
     roxygen2,
-SystemRequirements: pdftk, ghostscript, perl
+    testthat
 RoxygenNote: 6.0.1
+SystemRequirements: pdftk, ghostscript, perl
