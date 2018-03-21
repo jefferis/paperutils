@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/jefferis/paperutils.png?branch=master)](https://travis-ci.org/jefferis/paperutils)
-
+[![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
 # paperutils
 
 R package with utility functions to support preparation of journal articles
