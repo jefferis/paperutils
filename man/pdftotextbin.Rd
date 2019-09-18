@@ -4,7 +4,7 @@
 \alias{pdftotextbin}
 \title{Return absolute path to pdftotext binary}
 \usage{
-pdftotextbin()
+pdftotextbin(mustWork = TRUE)
 }
 \description{
 Return absolute path to pdftotext binary

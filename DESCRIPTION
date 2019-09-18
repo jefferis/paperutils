@@ -20,7 +20,8 @@ Imports:
     scholar (>= 0.1.6),
     utils,
     XML,
-    xml2
+    xml2,
+    usethis
 Suggests:
     spelling, 
     roxygen2,

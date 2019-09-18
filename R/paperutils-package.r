@@ -30,6 +30,12 @@
 #' options()[grep('^paperutils\\.', names(options()))]
 NULL
 
+#' Check current set up of external tools used by paperutils
+#'
+#' @export
+#'
+#' @examples
+#' dr_paperutils()
 dr_paperutils <- function() {
   if (!nzchar(bibtool_path(mustWork = F))) {
     usethis::ui_todo("Please install {ui_field('bibtool')} from https://ctan.org/pkg/bibtool")
