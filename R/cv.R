@@ -152,11 +152,13 @@ add_scholar_cites_to_bib<-function(author_id, bibin, bibout=NULL,
   for(i in seq_along(r)){
     gsid=r[[i]]$googlescholarid
     if(!is.null(gsid)) {
-      ml=match(r[[i]]$googlescholarid, df$cid)
-      if(!is.na(ml)) {
+      ml=grep(r[[i]]$googlescholarid, df$cid, fixed = TRUE)
+      if(isTRUE(length(ml)==1)) {
         r[[i]]$citationnum=df[ml,'cites']
       } else {
-        nonmatching_gsids=c(nonmatching_gsids, r[[i]]$key)
+        if(length(ml)>1)
+          warning("Multiple matches for publication: ", r[[i]]$key)
+        else nonmatching_gsids=c(nonmatching_gsids, r[[i]]$key)
       }
     } else {
       missing_gsids<-c(missing_gsids, r[[i]]$key)
