@@ -1,11 +1,11 @@
 #' Return absolute path to pdftotext binary
-pdftotextbin<-function(){
+pdftotextbin<-function(mustWork=TRUE){
   path=getOption('paperutils.pdftotext',Sys.which('pdftotext')[[1]])
   if(nchar(path)==0){
-    stop("Cannot locate pdftotext Make sure that it is in your path or set", 
+    if(isTRUE(mustWork))
+      stop("Cannot locate pdftotext. Make sure that it is in your path or set", 
          " options(paperutils.pdftotext='/path/to/pdftotext')")
-  }
-  if(is.null(getOption('paperutils.pdftotext'))) 
+  } else if(is.null(getOption('paperutils.pdftotext'))) 
     options(paperutils.pdftotext=path)
   path
 }

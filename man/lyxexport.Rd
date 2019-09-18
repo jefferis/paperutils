@@ -25,3 +25,4 @@ File->Export menu) should be passed as format.
 Other LyX: \code{\link{current_lyx_tempfile}},
   \code{\link{lyx_citekeys}}, \code{\link{lyxhtml2html}}
 }
+\concept{LyX}

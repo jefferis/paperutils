@@ -28,3 +28,4 @@ linked_from_lyx(system.file('tests','testthat','testdata','lyx','test.lyx',packa
 \author{
 jefferis
 }
+\concept{LyX,linked_from}

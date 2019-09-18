@@ -29,3 +29,44 @@
 #' # Show state of elmr package options
 #' options()[grep('^paperutils\\.', names(options()))]
 NULL
+
+dr_paperutils <- function() {
+  if (!nzchar(bibtool_path(mustWork = F))) {
+    usethis::ui_todo("Please install {ui_field('bibtool')} from https://ctan.org/pkg/bibtool")
+  } else {
+    usethis::ui_done('bibtool is installed')
+  }
+  if (!nzchar(biber(mustWork = F))) {
+    usethis::ui_todo(
+      paste(
+        "Please install {ui_field('biber')} from https://ctan.org/pkg/biber",
+        "(or via your favourite TeX distribution)"
+      )
+    )
+  } else {
+    usethis::ui_done('biber is installed')
+  }
+  
+  if (!nzchar(Sys.which('gs'))) {
+    usethis::ui_todo(
+      paste(
+        "Please install {ui_field('ghostscript')} (gs) via your favourite",
+        "TeX distribution (e.g. mactex)"
+      )
+    )
+  } else {
+    usethis::ui_done('ghostscript (gs) is installed')
+  }
+  
+  if (!nzchar(pdftotextbin(mustWork = F))) {
+    usethis::ui_todo(
+      paste(
+        "Please install {ui_field('pdftotext')}",
+        "eg from https://www.xpdfreader.com/"
+      )
+    )
+  } else {
+    usethis::ui_done('pdftotext is installed')
+  }
+  
+}

@@ -33,3 +33,5 @@ Other LyX: \code{\link{current_lyx_tempfile}},
 Other bib: \code{\link{bibdesk_clean}},
   \code{\link{biber_cache}}
 }
+\concept{LyX}
+\concept{bib}

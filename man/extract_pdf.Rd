@@ -3,7 +3,6 @@
 \name{extract_pdf}
 \alias{extract_pdf}
 \alias{extractpdf}
-\alias{extractpdf}
 \title{Extract pages from a PDF to new PDF(s)}
 \usage{
 extract_pdf(pdfin, pages, pdfout, prefix = NULL, DryRun = F,

@@ -41,3 +41,4 @@ Other LyX: \code{\link{lyx_citekeys}},
 \author{
 jefferis
 }
+\concept{LyX}

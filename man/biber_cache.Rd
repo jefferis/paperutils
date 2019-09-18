@@ -33,3 +33,4 @@ for discussion.
 Other bib: \code{\link{bibdesk_clean}},
   \code{\link{lyx_citekeys}}
 }
+\concept{bib}

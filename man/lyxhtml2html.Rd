@@ -30,3 +30,4 @@ lyxhtml2html(lyxhtml)
 Other LyX: \code{\link{current_lyx_tempfile}},
   \code{\link{lyx_citekeys}}, \code{\link{lyxexport}}
 }
+\concept{LyX}

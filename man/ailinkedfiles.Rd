@@ -22,3 +22,4 @@ Other linked_from: \code{\link{linked_from_ai}}
 \author{
 jefferis
 }
+\concept{linked_from}

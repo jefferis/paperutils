@@ -4,8 +4,8 @@
 \alias{pdftotext}
 \title{Invoke pdftotext tool to extract text from a PDF document}
 \usage{
-pdftotext(x, outfile = NULL, first = NULL, last = NULL, layout = FALSE,
-  table = FALSE, raw = FALSE, ...)
+pdftotext(x, outfile = NULL, first = NULL, last = NULL,
+  layout = FALSE, table = FALSE, raw = FALSE, ...)
 }
 \arguments{
 \item{x}{Path to PDF}
