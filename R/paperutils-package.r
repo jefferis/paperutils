@@ -75,4 +75,14 @@ dr_paperutils <- function() {
     usethis::ui_done('pdftotext is installed')
   }
   
+  if (!nzchar(pdftk(mustWork = F))) {
+    usethis::ui_todo(
+      paste(
+        "Please install {ui_field('pdftk')}",
+        "eg from https://www.pdflabs.com"
+      )
+    )
+  } else {
+    usethis::ui_done('pdftk is installed')
+  }
 }
