@@ -1,4 +1,6 @@
 #' Return absolute path to pdftotext binary
+#' @export
+#' @inheritParams pdftk
 pdftotextbin<-function(mustWork=TRUE){
   path=getOption('paperutils.pdftotext',Sys.which('pdftotext')[[1]])
   if(nchar(path)==0){

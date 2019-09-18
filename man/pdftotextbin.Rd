@@ -6,6 +6,10 @@
 \usage{
 pdftotextbin(mustWork = TRUE)
 }
+\arguments{
+\item{mustWork}{Whether to error out if tool cannot be found (default
+\code{TRUE})}
+}
 \description{
 Return absolute path to pdftotext binary
 }

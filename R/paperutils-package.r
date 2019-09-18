@@ -36,6 +36,7 @@ NULL
 #'
 #' @examples
 #' dr_paperutils()
+#' @importFrom usethis ui_field
 dr_paperutils <- function() {
   if (!nzchar(bibtool_path(mustWork = F))) {
     usethis::ui_todo("Please install {ui_field('bibtool')} from https://ctan.org/pkg/bibtool")

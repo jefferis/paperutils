@@ -4,7 +4,11 @@
 \alias{pdftk}
 \title{Return absolute path to pdftk binary}
 \usage{
-pdftk()
+pdftk(mustWork = TRUE)
+}
+\arguments{
+\item{mustWork}{Whether to error out if tool cannot be found (default
+\code{TRUE})}
 }
 \description{
 Return absolute path to pdftk binary

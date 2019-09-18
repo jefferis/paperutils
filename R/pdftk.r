@@ -1,4 +1,7 @@
 #' Return absolute path to pdftk binary
+#' @param mustWork Whether to error out if tool cannot be found (default
+#'   \code{TRUE})
+#' @export
 pdftk<-function(mustWork=TRUE){
   path=getOption('paperutils.pdftk',Sys.which('pdftk')[[1]])
   if(nchar(path)==0){
