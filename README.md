@@ -23,9 +23,9 @@ to prepare our journal articles for submission. This package contains functions 
 
 ### R Dependencies
 The package [scholar](https://github.com/jkeirstead/scholar) is necessary for 
-some bibliograpy related functions. 
+some bibliography related functions. 
 However currently the CRAN version is 
-misssing the ability to specify a number of publications to return for each
+missing the ability to specify a number of publications to return for each
 author, so that only 20 can be returned. Therefore the package installs the 
 latest version from GitHub.
 

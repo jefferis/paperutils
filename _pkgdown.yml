@@ -3,6 +3,7 @@ reference:
   desc: ~
   contents:
   - '`paperutils`'
+  - '`dr_paperutils`'
 - title: PDF manipulation
   desc: ~
   contents:
